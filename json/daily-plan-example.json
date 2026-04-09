@@ -1,0 +1,135 @@
+{
+  "plan_id": "plan-2025-09-15-mckenna",
+  "student_id": "mckenna-ray-001",
+  "date": "2025-09-15",
+  "created_at": "2025-09-15T09:00:00Z",
+
+  "day_theme": "regular",
+  "total_estimated_time_minutes": 85,
+
+  "plan_metadata": {
+    "reading_focus": "Fluency — read 2 pages from Dog Man with expression",
+    "math_focus": "Addition with regrouping — 3 practice problems",
+    "enrichment_theme": "Animal habitats — draw and label a wolf habitat",
+    "light_day": false,
+    "generated_by": "system"
+  },
+
+  "blocks": [
+    {
+      "block_id": "block-001-startup",
+      "order": 1,
+      "title": "Startup Routine",
+      "subject": "startup",
+      "estimated_time_minutes": 10,
+      "goal": "Get settled, gather materials, feel ready",
+      "instructions": "Take 3 slow breaths. Get your book and pencil. Look at today's plan. Tap 'ready' when you're set.",
+      "materials": ["Dog Man book", "pencil", "math notebook"],
+      "adaptation": null,
+      "lesson_id": null,
+      "ef_transition_support": null,
+      "completion": {
+        "status": "completed",
+        "completed_at": "2025-09-15T09:10:00Z",
+        "notes": null
+      }
+    },
+    {
+      "block_id": "block-002-reading",
+      "order": 2,
+      "title": "Reading Block",
+      "subject": "reading",
+      "estimated_time_minutes": 20,
+      "goal": "Read 2 pages of Dog Man with expression and fluency",
+      "instructions": "Open to page 14. Read pages 14 and 15 out loud. Try to read with expression — change your voice for different characters.",
+      "materials": ["Dog Man book"],
+      "adaptation": "If 2 pages feels like too much today, 1 page is okay. Tell your guide.",
+      "lesson_id": "lesson-reading-2025-09-15",
+      "ef_transition_support": "Reading is done. Great work. Take a 5-minute break before math.",
+      "completion": {
+        "status": "completed",
+        "completed_at": "2025-09-15T09:33:00Z",
+        "notes": "Completed both pages. Confidence check: 4/5"
+      }
+    },
+    {
+      "block_id": "block-003-break",
+      "order": 3,
+      "title": "Movement Break",
+      "subject": "break",
+      "estimated_time_minutes": 5,
+      "goal": "Reset and move",
+      "instructions": "Stand up. Shake out your hands. Walk around for 2 minutes. Drink some water. Come back when the timer ends.",
+      "materials": [],
+      "adaptation": null,
+      "lesson_id": null,
+      "ef_transition_support": "Ready for math when you are.",
+      "completion": {
+        "status": "completed",
+        "completed_at": "2025-09-15T09:38:00Z",
+        "notes": null
+      }
+    },
+    {
+      "block_id": "block-004-math",
+      "order": 4,
+      "title": "Math Block",
+      "subject": "math",
+      "estimated_time_minutes": 20,
+      "goal": "Solve 3 addition with regrouping problems correctly",
+      "instructions": "Today: 3 problems. One at a time. Reference strip is available. Take your time on each one.",
+      "materials": ["math notebook", "pencil", "reference strip (in app)"],
+      "adaptation": "If 3 problems feels like too much, do 2 and flag for your guide.",
+      "lesson_id": "lesson-math-2025-09-15",
+      "ef_transition_support": "Math is done. That was real work. Take a breath before enrichment.",
+      "completion": {
+        "status": "completed",
+        "completed_at": "2025-09-15T10:02:00Z",
+        "notes": "Completed all 3 problems. Got 2 of 3 correct on first try. Confidence check: 3/5"
+      }
+    },
+    {
+      "block_id": "block-005-enrichment",
+      "order": 5,
+      "title": "Enrichment — Animal Habitats",
+      "subject": "enrichment",
+      "estimated_time_minutes": 20,
+      "goal": "Draw and label a wolf habitat",
+      "instructions": "Today we're thinking about where wolves live. Draw a wolf habitat (forest, mountains, or tundra — your choice). Label at least 3 things in your drawing. There's no wrong way to do this.",
+      "materials": ["drawing paper", "colored pencils or markers"],
+      "adaptation": "Can do this digitally if preferred (drawing app).",
+      "lesson_id": "lesson-enrichment-2025-09-15",
+      "ef_transition_support": "Enrichment done. One more block — the wrap-up is short.",
+      "completion": {
+        "status": "completed",
+        "completed_at": "2025-09-15T10:25:00Z",
+        "notes": "High engagement. Drew a forest habitat, labeled trees, snow, and a den."
+      }
+    },
+    {
+      "block_id": "block-006-wrapup",
+      "order": 6,
+      "title": "Wrap-Up",
+      "subject": "wrap_up",
+      "estimated_time_minutes": 10,
+      "goal": "Close the day and reflect",
+      "instructions": "You're almost done. Answer one question: What was the best part of today's learning? Then tap 'Finish Today.'",
+      "materials": [],
+      "adaptation": null,
+      "lesson_id": null,
+      "ef_transition_support": null,
+      "completion": {
+        "status": "completed",
+        "completed_at": "2025-09-15T10:36:00Z",
+        "notes": "Student response: 'Drawing the wolf was fun.'"
+      }
+    }
+  ],
+
+  "completion_summary": {
+    "total_blocks": 6,
+    "completed_blocks": 6,
+    "completion_rate": 1.0,
+    "total_time_spent_minutes": 96
+  }
+}

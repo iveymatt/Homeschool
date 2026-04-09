@@ -1,0 +1,184 @@
+{
+  "id": "mckenna-ray-001",
+  "created_at": "2025-09-01T09:00:00Z",
+  "updated_at": "2025-09-15T08:30:00Z",
+
+  "identity": {
+    "full_name": "McKenna Ray",
+    "nickname": "McKenna",
+    "age": 12,
+    "grade_level": "6th",
+    "homeschool_status": "active"
+  },
+
+  "academic_snapshot": {
+    "reading_level_estimate": "3rd-4th grade (functional), catching up",
+    "math_level_estimate": "4th grade (foundational operations solid, fractions emerging)",
+    "strongest_subjects": ["creative thinking", "verbal expression", "art"],
+    "challenge_subjects": ["reading fluency", "multi-step math", "writing stamina"],
+    "current_goals": [
+      "Build reading fluency and confidence",
+      "Solidify addition and subtraction with regrouping",
+      "Complete daily plan with less prompting over time"
+    ]
+  },
+
+  "cognitive_profile": {
+    "attention_span_minutes": 15,
+    "preferred_lesson_length": 10,
+    "learning_modes_preference": ["visual", "auditory", "kinesthetic"],
+    "visual_support_needed": true,
+    "audio_support_needed": true,
+    "movement_break_frequency_minutes": 20,
+    "transition_support_needed": true,
+    "frustration_triggers": [
+      "being corrected in front of others",
+      "long blocks of text",
+      "unclear instructions",
+      "feeling behind",
+      "tasks with no visible end point"
+    ],
+    "confidence_reading": 2,
+    "confidence_math": 2,
+    "confidence_general": 3
+  },
+
+  "interest_profile": {
+    "favorite_topics": ["animals", "art", "YouTube creators", "fashion", "dogs", "nature"],
+    "favorite_animals": ["dogs", "horses", "wolves", "dolphins"],
+    "favorite_books": ["Dog Man series", "Diary of a Wimpy Kid"],
+    "favorite_games": ["Roblox", "drawing games", "mobile casual games"],
+    "favorite_shows": ["nature documentaries", "YouTube animal channels", "cooking shows"],
+    "favorite_activities": ["drawing", "crafting", "spending time with animals", "outdoor walks"],
+    "creative_preferences": ["drawing", "making things", "decorating", "painting"]
+  },
+
+  "routine_profile": {
+    "best_learning_times": ["morning", "midday"],
+    "ideal_start_time": "9:30 AM",
+    "daily_schedule_constraints": [
+      "Lower energy after 2 PM",
+      "Needs warm-up time before academic tasks"
+    ],
+    "energy_patterns": "slow-start — needs 10–15 min of low-demand activity before academic work",
+    "support_available": ["mom", "grandmother", "occasional tutor"]
+  },
+
+  "personalization_memory": {
+    "lessons_that_worked": [
+      "Short reading passages about dogs or animals",
+      "Math problems with real-world contexts (money, measurement)",
+      "Step-by-step instructions with checkboxes",
+      "Drawing as a response or summary activity"
+    ],
+    "lessons_that_failed": [
+      "Long reading passages without breaks",
+      "Open-ended writing prompts with no structure",
+      "Timed math drills",
+      "Worksheets with dense text"
+    ],
+    "engagement_patterns": [
+      "High engagement when topic involves animals",
+      "High engagement when task has a visible finish line",
+      "Low engagement when instructions are given verbally only"
+    ],
+    "high_success_formats": [
+      "micro-step checklists",
+      "one question at a time",
+      "interest-hooked lesson openers",
+      "visual vocabulary supports"
+    ],
+    "low_success_formats": [
+      "timed drills",
+      "open-ended long-form tasks",
+      "dense paragraph instructions"
+    ],
+    "recent_wins": [
+      "Completed 5 reading sessions in a row without skipping",
+      "Solved regrouping problems independently on 2 consecutive days",
+      "Started reading block without prompting on Friday"
+    ],
+    "current_struggle_flags": [
+      "Often needs multiple prompts to begin math block",
+      "Frequently leaves reading tasks 90% done without clicking 'Done'",
+      "Transitions from reading to math are bumpy"
+    ]
+  },
+
+  "ef_profile": {
+    "domains": {
+      "task_initiation": {
+        "score": 1,
+        "support_level": 2,
+        "trend": "improving",
+        "sessions_at_level": 3,
+        "last_updated": "2025-09-15",
+        "notes": "First-step-only prompts work well. Getting started within 2–3 min on good days."
+      },
+      "planning_organization": {
+        "score": 2,
+        "support_level": 1,
+        "trend": "stable",
+        "sessions_at_level": 5,
+        "last_updated": "2025-09-12",
+        "notes": "Benefits from visible step list before starting. Can follow a pre-set plan."
+      },
+      "working_memory": {
+        "score": 1,
+        "support_level": 2,
+        "trend": "stable",
+        "sessions_at_level": 4,
+        "last_updated": "2025-09-14",
+        "notes": "Vocabulary anchor cards are essential. Re-asks instructions frequently without them."
+      },
+      "transitions": {
+        "score": 1,
+        "support_level": 2,
+        "trend": "improving",
+        "sessions_at_level": 3,
+        "last_updated": "2025-09-15",
+        "notes": "2-min warning + named transition phrase + movement break = smooth transitions."
+      },
+      "sustained_focus": {
+        "score": 2,
+        "support_level": 1,
+        "trend": "stable",
+        "sessions_at_level": 6,
+        "last_updated": "2025-09-13",
+        "notes": "15-min max blocks. Interest hooks at start of each block help."
+      },
+      "task_completion": {
+        "score": 1,
+        "support_level": 2,
+        "trend": "improving",
+        "sessions_at_level": 3,
+        "last_updated": "2025-09-15",
+        "notes": "Done confirmation screens help her register closure. Trend is positive."
+      },
+      "emotional_regulation": {
+        "score": 2,
+        "support_level": 1,
+        "trend": "stable",
+        "sessions_at_level": 7,
+        "last_updated": "2025-09-11",
+        "notes": "Gentle error framing is essential. No red X. No 'wrong, try again.'"
+      },
+      "time_awareness": {
+        "score": 1,
+        "support_level": 2,
+        "trend": "stable",
+        "sessions_at_level": 4,
+        "last_updated": "2025-09-12",
+        "notes": "Responds well to time analogies: 'This is about as long as 2 songs.'"
+      },
+      "impulse_control": {
+        "score": 2,
+        "support_level": 1,
+        "trend": "stable",
+        "sessions_at_level": 5,
+        "last_updated": "2025-09-10",
+        "notes": "One-task-at-a-time view reduces jumping ahead. Single visible step helps."
+      }
+    }
+  }
+}

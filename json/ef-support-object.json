@@ -1,0 +1,176 @@
+{
+  "ef_support_object": {
+    "lesson_id": "lesson-reading-2025-09-15",
+    "student_id": "mckenna-ray-001",
+    "subject": "reading",
+    "title": "Dog Man Pages 14–15: Fluency Read",
+    "generated_at": "2025-09-15T09:12:00Z",
+
+    "ef_supports": [
+      {
+        "phase": "before",
+        "domain": "task_initiation",
+        "support_type": "first_step_only",
+        "display_text": "Today you're reading two pages from Dog Man. That's it — just two pages. First step: open to page 14.",
+        "support_level": 2,
+        "trigger": "on_lesson_load"
+      },
+      {
+        "phase": "before",
+        "domain": "planning_organization",
+        "support_type": "task_preview",
+        "display_text": "Here's your plan for this block:\n1. Read page 14 out loud.\n2. Take one breath.\n3. Read page 15 out loud.\n4. Answer: what did you just read about?\n5. Mark it done.",
+        "support_level": 1,
+        "trigger": "after_task_initiation_prompt"
+      },
+      {
+        "phase": "before",
+        "domain": "working_memory",
+        "support_type": "vocabulary_anchor_card",
+        "vocabulary": [
+          {
+            "word": "expression",
+            "meaning": "reading with feeling — changing your voice to match what's happening in the story"
+          },
+          {
+            "word": "fluency",
+            "meaning": "reading smoothly, not stopping and starting a lot"
+          }
+        ],
+        "display_text": "These words will stay on your screen the whole time you read. You can peek at them anytime.",
+        "support_level": 2,
+        "trigger": "before_reading_starts"
+      },
+      {
+        "phase": "during",
+        "domain": "sustained_focus",
+        "support_type": "mid_task_pause",
+        "trigger": "after_page_14_marked_complete",
+        "display_text": "Nice. Page 14 is done. Take one slow breath. When you're ready, tap Next for page 15.",
+        "support_level": 1
+      },
+      {
+        "phase": "during",
+        "domain": "working_memory",
+        "support_type": "anchor_reminder",
+        "trigger": "persistent_sidebar",
+        "display_text": "Vocabulary card is in the corner. Tap to expand anytime.",
+        "support_level": 2
+      },
+      {
+        "phase": "after",
+        "domain": "working_memory",
+        "support_type": "recall_prompt",
+        "trigger": "after_reading_complete",
+        "display_text": "What's one thing that happened in those two pages? Say it out loud or type it here.",
+        "support_level": 1,
+        "response_required": false,
+        "prompt_options": [
+          "Something happened between the characters",
+          "Something funny or surprising happened",
+          "I'm not sure — that was hard"
+        ]
+      },
+      {
+        "phase": "after",
+        "domain": "task_completion",
+        "support_type": "done_confirmation",
+        "trigger": "after_recall_prompt",
+        "display_text": "You read both pages. That is the whole reading assignment. You're done with reading today.",
+        "support_level": 2,
+        "requires_tap": true,
+        "button_label": "Mark Reading Complete"
+      },
+      {
+        "phase": "after",
+        "domain": "emotional_regulation",
+        "support_type": "confidence_check",
+        "trigger": "after_done_tap",
+        "display_text": "How did reading feel today?",
+        "support_level": 1,
+        "options": [
+          { "label": "Easy", "emoji": "😊", "value": 5 },
+          { "label": "OK", "emoji": "😐", "value": 3 },
+          { "label": "Hard", "emoji": "😔", "value": 2 },
+          { "label": "Really hard", "emoji": "😤", "value": 1 }
+        ]
+      },
+      {
+        "phase": "after",
+        "domain": "transitions",
+        "support_type": "named_transition_phrase",
+        "trigger": "after_confidence_check",
+        "display_text": "Reading is done. Your brain worked hard. Take a 5-minute movement break before math.",
+        "support_level": 2,
+        "next_block": "movement_break"
+      }
+    ],
+
+    "session_log": {
+      "log_id": "ef-log-2025-09-15-reading",
+      "date": "2025-09-15",
+      "domain_outcomes": [
+        {
+          "domain": "task_initiation",
+          "support_offered": "first_step_only",
+          "support_level_used": 2,
+          "initiated_independently": false,
+          "time_to_start_minutes": 2.5,
+          "prompts_required": 1,
+          "session_score": 2,
+          "notes": "Started after first-step prompt. No second prompt needed."
+        },
+        {
+          "domain": "planning_organization",
+          "support_offered": "task_preview",
+          "support_level_used": 1,
+          "followed_steps_in_order": true,
+          "session_score": 3,
+          "notes": "Followed the 5-step plan correctly."
+        },
+        {
+          "domain": "working_memory",
+          "support_offered": "vocabulary_anchor_card",
+          "support_level_used": 2,
+          "referenced_anchor": true,
+          "times_referenced": 2,
+          "session_score": 1,
+          "notes": "Tapped vocabulary card twice. Needed it."
+        },
+        {
+          "domain": "sustained_focus",
+          "support_offered": "mid_task_pause",
+          "support_level_used": 1,
+          "completed_without_abandon": true,
+          "session_score": 3,
+          "notes": "Stayed on task. Mid-task pause helped reset."
+        },
+        {
+          "domain": "task_completion",
+          "support_offered": "done_confirmation_screen",
+          "support_level_used": 2,
+          "completed_task": true,
+          "required_completion_prompt": true,
+          "session_score": 2,
+          "notes": "Tapped Done after confirmation screen appeared."
+        },
+        {
+          "domain": "transitions",
+          "support_offered": "named_transition_phrase",
+          "support_level_used": 2,
+          "transition_smooth": true,
+          "transition_delay_minutes": 2,
+          "session_score": 2,
+          "notes": "Transitioned after transition phrase. Took break and moved to math."
+        }
+      ],
+      "session_summary": {
+        "overall_ef_score": 2.17,
+        "frustration_events": 0,
+        "task_abandoned": false,
+        "total_initiation_delay_minutes": 2.5,
+        "confidence_after": 4
+      }
+    }
+  }
+}
