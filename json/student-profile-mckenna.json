@@ -6,21 +6,26 @@
   "identity": {
     "full_name": "McKenna Ray",
     "nickname": "McKenna",
-    "age": 12,
-    "grade_level": "6th",
+    "age": 13,
+    "grade_level": "8th",
     "homeschool_status": "active"
   },
 
   "academic_snapshot": {
-    "reading_level_estimate": "3rd-4th grade (functional), catching up",
-    "math_level_estimate": "4th grade (foundational operations solid, fractions emerging)",
-    "strongest_subjects": ["creative thinking", "verbal expression", "art"],
-    "challenge_subjects": ["reading fluency", "multi-step math", "writing stamina"],
+    "enrolled_grade": "8th",
+    "reading_level_estimate": "6th grade (approximately)",
+    "reading_grade_gap": 2,
+    "math_level_estimate": "6th grade (foundational operations solid, pre-algebra emerging)",
+    "math_grade_gap": 2,
+    "strongest_subjects": ["creative thinking", "verbal expression", "art", "oral comprehension"],
+    "challenge_subjects": ["reading fluency", "multi-step math", "writing stamina", "abstract reasoning without visuals"],
     "current_goals": [
-      "Build reading fluency and confidence",
-      "Solidify addition and subtraction with regrouping",
-      "Complete daily plan with less prompting over time"
-    ]
+      "Reach 7th grade reading fluency by end of semester",
+      "Build confidence in pre-algebra concepts",
+      "Complete daily homeschool plan with decreasing prompting over time"
+    ],
+    "standards_reference": "California Common Core State Standards (CCSS) — 8th grade",
+    "standards_gap_summary": "McKenna is working approximately 2 grade levels below California 8th grade ELA standards and is approaching grade-level math with targeted support."
   },
 
   "cognitive_profile": {
@@ -35,16 +40,27 @@
       "being corrected in front of others",
       "long blocks of text",
       "unclear instructions",
-      "feeling behind",
-      "tasks with no visible end point"
+      "feeling behind or labeled as behind",
+      "tasks with no visible end point",
+      "abstract math without visuals"
     ],
     "confidence_reading": 2,
     "confidence_math": 2,
-    "confidence_general": 3
+    "confidence_general": 3,
+    "reading_struggle_type": [
+      "fluency",
+      "working_memory",
+      "avoidance_due_to_frustration"
+    ],
+    "math_difficulty_type": [
+      "abstract_presentation",
+      "multi_step_sequencing",
+      "confidence"
+    ]
   },
 
   "interest_profile": {
-    "favorite_topics": ["animals", "art", "YouTube creators", "fashion", "dogs", "nature"],
+    "favorite_topics": ["animals", "art", "YouTube creators", "fashion", "dogs", "nature", "wildlife"],
     "favorite_animals": ["dogs", "horses", "wolves", "dolphins"],
     "favorite_books": ["Dog Man series", "Diary of a Wimpy Kid"],
     "favorite_games": ["Roblox", "drawing games", "mobile casual games"],
@@ -64,34 +80,80 @@
     "support_available": ["mom", "grandmother", "occasional tutor"]
   },
 
+  "goal_profile": {
+    "30_day_goals": [
+      "Complete at least 20 of 22 scheduled school days",
+      "Read 2 full books at 6th grade level or above",
+      "Demonstrate fluency on 3 consecutive reading sessions without errors",
+      "Solve 10-problem mixed operations sets with 80%+ accuracy"
+    ],
+    "90_day_goals": [
+      "Reach 7th grade independent reading level on fluency measures",
+      "Master 6th grade math skills: ratios, percentages, one-step equations",
+      "Build consistent daily school routine with minimal prompting",
+      "Complete one project-based learning unit tied to animal interest"
+    ],
+    "yearly_goals": [
+      "Close the reading gap to 1 grade level (reading at 7th grade level)",
+      "Achieve 7th grade math proficiency",
+      "Build a personal learning portfolio demonstrating growth",
+      "Develop a positive identity as a learner"
+    ],
+    "reading_goals": [
+      "Increase fluency to 120+ words per minute at 6th grade level",
+      "Build vocabulary: 5 new words per week with retention",
+      "Improve reading comprehension: summarize main idea with detail"
+    ],
+    "math_goals": [
+      "Master operations with fractions and decimals",
+      "Understand and apply ratios and proportional reasoning",
+      "Build foundation for pre-algebra: variables and expressions"
+    ],
+    "routine_goals": [
+      "Start school day within 10 minutes of planned start time",
+      "Complete daily plan without adult-initiated reminders for each block",
+      "Develop self-monitoring: know what comes next without checking in"
+    ],
+    "confidence_goals": [
+      "Self-rate reading confidence at 3+ on a 5-point scale within 60 days",
+      "Self-rate math confidence at 3+ on a 5-point scale within 60 days",
+      "Verbally name one thing she's good at each week"
+    ]
+  },
+
   "personalization_memory": {
     "lessons_that_worked": [
       "Short reading passages about dogs or animals",
       "Math problems with real-world contexts (money, measurement)",
       "Step-by-step instructions with checkboxes",
-      "Drawing as a response or summary activity"
+      "Drawing as a response or summary activity",
+      "Lessons with a visible beginning, middle, and end"
     ],
     "lessons_that_failed": [
       "Long reading passages without breaks",
       "Open-ended writing prompts with no structure",
       "Timed math drills",
-      "Worksheets with dense text"
+      "Worksheets with dense text",
+      "Abstract math explanations without visuals"
     ],
     "engagement_patterns": [
       "High engagement when topic involves animals",
       "High engagement when task has a visible finish line",
-      "Low engagement when instructions are given verbally only"
+      "Low engagement when instructions are given verbally only",
+      "High engagement with drawing or creative response options"
     ],
     "high_success_formats": [
       "micro-step checklists",
       "one question at a time",
       "interest-hooked lesson openers",
-      "visual vocabulary supports"
+      "visual vocabulary supports",
+      "reference strips for math"
     ],
     "low_success_formats": [
       "timed drills",
       "open-ended long-form tasks",
-      "dense paragraph instructions"
+      "dense paragraph instructions",
+      "tests presented as tests"
     ],
     "recent_wins": [
       "Completed 5 reading sessions in a row without skipping",
@@ -101,7 +163,8 @@
     "current_struggle_flags": [
       "Often needs multiple prompts to begin math block",
       "Frequently leaves reading tasks 90% done without clicking 'Done'",
-      "Transitions from reading to math are bumpy"
+      "Transitions from reading to math are bumpy",
+      "Abstract fractions without visual models are difficult"
     ]
   },
 

@@ -158,27 +158,56 @@ Close that loop before building anything else.
 
 ---
 
-## Phase 6 — Polish & Stability (Days 22–25)
+## Phase 6 — Standards Layer & Monthly Reporting (Days 22–25)
+*Goal: Family-facing standards reporting is live; monthly reflection generates*
+
+### 6.1 Standards Alignment on Lessons
+- Add `standards_alignment` field to each generated lesson (see `data-schema.md`)
+- Map each skill ladder level to its CA CCSS standard ID (see `standards-alignment.md`)
+- Standards data never shown in student-facing lesson view — parent layer only
+- Output: every lesson carries a standards reference
+
+### 6.2 Standards Progress Card in Parent Summary
+- Add `standards_progress_card` section to daily and weekly parent summaries
+- Plain-language statement: "Here's what California expects, here's where McKenna is"
+- Output: parent summary includes standards context in plain English
+
+### 6.3 Skill Milestone Detection + Celebration
+- Implement `skill_milestones` schema
+- Detect milestone trigger conditions (see `curriculum-engine.md` advance rules)
+- Generate milestone card: shown to student + parent notification
+- Add milestone to `monthly_reflection.wins[]`
+- Output: milestones fire automatically and celebrate visibly
+
+### 6.4 Monthly Reflection Generator
+- Implement `monthly_reflections` schema
+- Generate at end of each calendar month
+- Include: reading/math ladder movement, goal progress check, EF growth notes, wins
+- Output: shareable monthly summary parents can show family
+
+---
+
+## Phase 7 — Polish & Stability (Days 26–30)
 *Goal: MVP is clean, stable, and trustworthy enough to use daily*
 
-### 6.1 UX Polish
+### 7.1 UX Polish
 - Review all screens against `wireframes.md` design notes
 - Ensure typography, spacing, color, and tone are consistent
 - Add loading states, empty states, error states
 - Remove any cluttered or confusing UI
 
-### 6.2 Data Persistence
+### 7.2 Data Persistence
 - Ensure student profile, session logs, and progress records persist across page loads
 - Add local storage or simple backend (Firebase / Supabase recommended)
 - Output: data survives refresh and next-day session
 
-### 6.3 Sample Data for Demo
+### 7.3 Sample Data for Demo
 - Load McKenna's full profile (see `json/student-profile-mckenna.json`)
 - Load sample week of lessons
 - Load sample parent summaries
 - Output: platform can be demonstrated without going through full setup
 
-### 6.4 Mobile Responsiveness
+### 7.4 Mobile Responsiveness
 - Test all screens at mobile viewport (375px wide minimum)
 - Fix any layout breaks
 - Ensure all tap targets are 44x44px minimum
@@ -220,4 +249,5 @@ When generating features with AI assistance:
 | 3 | EF system | Supports injected + tracked |
 | 4 | Parent visibility | Summaries + progress |
 | 5 | Personalization | Adaptive recommendations |
-| 6 | Polish | Clean, stable, demo-ready |
+| 6 | Standards + milestones | CA standards layer + monthly reporting |
+| 7 | Polish | Clean, stable, demo-ready |

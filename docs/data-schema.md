@@ -22,11 +22,29 @@ All schemas are represented as JSON-compatible structures. In a relational DB, t
   },
 
   "academic_snapshot": {
-    "reading_level_estimate": "string (e.g. '3rd grade', 'Fountas-Pinnell J')",
+    "enrolled_grade": "string",
+    "reading_level_estimate": "string (e.g. '6th grade')",
+    "reading_grade_gap": "integer (enrolled grade minus reading level)",
+    "reading_current_ladder_level": "integer (ref: READING_SKILL_LADDER)",
     "math_level_estimate": "string",
+    "math_grade_gap": "integer",
+    "math_current_ladder_level": "integer (ref: MATH_SKILL_LADDER)",
     "strongest_subjects": ["string"],
     "challenge_subjects": ["string"],
-    "current_goals": ["string"]
+    "current_goals": ["string"],
+    "standards_reference": "string (e.g. 'California CCSS 8th grade')",
+    "standards_gap_summary": "string (plain language gap description)"
+  },
+
+  "goal_profile": {
+    "30_day_goals": ["string"],
+    "90_day_goals": ["string"],
+    "yearly_goals": ["string"],
+    "reading_goals": ["string"],
+    "math_goals": ["string"],
+    "routine_goals": ["string"],
+    "confidence_goals": ["string"],
+    "goal_last_reviewed": "date"
   },
 
   "cognitive_profile": {
@@ -40,7 +58,9 @@ All schemas are represented as JSON-compatible structures. In a relational DB, t
     "frustration_triggers": ["string"],
     "confidence_reading": "1-5 integer",
     "confidence_math": "1-5 integer",
-    "confidence_general": "1-5 integer"
+    "confidence_general": "1-5 integer",
+    "reading_struggle_type": ["decoding", "fluency", "working_memory", "comprehension", "avoidance_frustration", "attention"],
+    "math_difficulty_type": ["fact_fluency", "concept_gap", "multi_step_sequencing", "working_memory", "abstract_presentation", "confidence", "overwhelm"]
   },
 
   "interest_profile": {
@@ -146,7 +166,24 @@ All schemas are represented as JSON-compatible structures. In a relational DB, t
   },
 
   "success_markers": ["string"],
-  "followup_recommendation": "string"
+  "followup_recommendation": "string",
+
+  "standards_alignment": {
+    "primary_standard": {
+      "id": "string (e.g. 'RF.6.4b')",
+      "description": "string",
+      "grade": "string",
+      "domain": "string"
+    },
+    "secondary_standard": {
+      "id": "string | null",
+      "description": "string | null",
+      "grade": "string | null",
+      "domain": "string | null"
+    },
+    "grade_level_context": "string (how this lesson fits in the standards ladder)",
+    "parent_note": "string (plain language for family reporting)"
+  }
 }
 ```
 
@@ -300,7 +337,7 @@ All schemas are represented as JSON-compatible structures. In a relational DB, t
   "student_id": "string (ref: student_profiles.id)",
   "student_name": "string",
   "date": "date",
-  "period": "daily | weekly",
+  "period": "daily | weekly | monthly",
   "generated_at": "timestamp",
 
   "plan_summary": {
@@ -347,7 +384,27 @@ All schemas are represented as JSON-compatible structures. In a relational DB, t
   "support_note": "string",
   "recommendation_for_tomorrow": "string",
 
-  "tone": "encouraging | neutral | flag_concern"
+  "tone": "encouraging | neutral | flag_concern",
+
+  "standards_progress_card": {
+    "reading_standards_worked": [
+      {
+        "standard": "string (id)",
+        "description": "string",
+        "sessions_practiced": "integer",
+        "progress": "introducing | developing | solidifying | mastered"
+      }
+    ],
+    "math_standards_worked": [
+      {
+        "standard": "string (id)",
+        "description": "string",
+        "sessions_practiced": "integer",
+        "progress": "introducing | developing | solidifying | mastered"
+      }
+    ],
+    "parent_summary_statement": "string"
+  }
 }
 ```
 
@@ -400,6 +457,102 @@ All schemas are represented as JSON-compatible structures. In a relational DB, t
 
 ---
 
+## 8. monthly_reflections
+
+```json
+{
+  "reflection_id": "string (uuid)",
+  "student_id": "string (ref: student_profiles.id)",
+  "month": "string (e.g. 'September 2025')",
+  "month_start": "date",
+  "month_end": "date",
+  "generated_at": "timestamp",
+
+  "reading": {
+    "ladder_level_start": "integer",
+    "ladder_level_end": "integer",
+    "level_label_start": "string",
+    "level_label_end": "string",
+    "sessions_completed": "integer",
+    "sessions_planned": "integer",
+    "books_completed": "integer",
+    "fluency_trend": "improving | stable | declining",
+    "confidence_start": "1-5 integer",
+    "confidence_end": "1-5 integer",
+    "highlight": "string",
+    "skills_mastered": ["string"],
+    "skills_in_progress": ["string"]
+  },
+
+  "math": {
+    "ladder_level_start": "integer",
+    "ladder_level_end": "integer",
+    "level_label_start": "string",
+    "level_label_end": "string",
+    "sessions_completed": "integer",
+    "problems_attempted": "integer",
+    "accuracy_trend": "improving | stable | declining",
+    "confidence_start": "1-5 integer",
+    "confidence_end": "1-5 integer",
+    "highlight": "string",
+    "skills_mastered": ["string"],
+    "skills_in_progress": ["string"]
+  },
+
+  "ef_growth": ["string (plain language notes per domain that improved)"],
+
+  "goal_progress": {
+    "30_day_goals": [
+      {
+        "goal": "string",
+        "status": "met | in_progress | not_met",
+        "note": "string | null"
+      }
+    ]
+  },
+
+  "wins": ["string"],
+  "areas_to_watch": ["string"],
+  "recommendation_for_next_month": "string",
+
+  "parent_summary_statement": "string (plain language monthly recap for family)"
+}
+```
+
+---
+
+## 9. skill_milestones
+
+```json
+{
+  "milestone_id": "string (uuid)",
+  "student_id": "string (ref: student_profiles.id)",
+  "achieved_at": "timestamp",
+
+  "subject": "reading | math",
+  "milestone_label": "string (e.g. 'Reading Fluency — 6th Grade Level')",
+  "skill": "string",
+  "ladder_level": "integer",
+  "standard_id": "string (CA CCSS standard)",
+  "standard_description": "string",
+
+  "evidence": {
+    "sessions_to_achieve": "integer",
+    "final_accuracy_or_score": "string",
+    "confidence_at_milestone": "1-5 integer"
+  },
+
+  "celebration": {
+    "triggered": "boolean",
+    "type": "badge | portfolio_entry | choice_activity | parent_notification",
+    "message": "string (shown to student)",
+    "parent_note": "string"
+  }
+}
+```
+
+---
+
 ## Relationships
 
 ```
@@ -410,6 +563,8 @@ student_profiles (1)
     → progress_records (many)
     → parent_summaries (many)
     → weekly_plans (many)
+    → monthly_reflections (many)
+    → skill_milestones (many)
 
 daily_plans (1)
     → blocks[] → lesson_id → lessons (1)
@@ -417,5 +572,10 @@ daily_plans (1)
 
 lessons (1)
     → ef_supports[] (embedded)
+    → standards_alignment (embedded)
     → ef_support_logs (1 per lesson instance)
+
+skill_milestones (1)
+    → triggers celebration activity in next daily_plan
+    → appended to monthly_reflection.wins[]
 ```
