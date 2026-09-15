@@ -10,7 +10,7 @@ START
   │
   ▼
 1. Welcome Screen
-   "Let's set up McKenna's learning profile."
+   "Let's set up Makena's learning profile."
    [Begin Setup] button
   │
   ▼
@@ -71,7 +71,7 @@ START
   │
   ▼
 9. Setup Complete
-   "McKenna's profile is ready."
+   "Makena's profile is ready."
    [Go to Today's Plan]
 
 END
@@ -145,7 +145,7 @@ START (beginning of school day)
 8. Completion State
    - Dashboard shows: all blocks completed
    - Mini celebration (confetti, badge, or streak update — calm, not overwhelming)
-   - Parent notified: "McKenna finished today's plan."
+   - Parent notified: "Makena finished today's plan."
 
 END
 ```
@@ -194,7 +194,7 @@ EF SUPPORT TRIGGER DURING LESSON
   ▼
 6. Escalation Path (if struggle detected)
    - If frustration_events >= 2 in one session:
-     → Surface to parent: "McKenna had a hard time with [X] today. Here are some options."
+     → Surface to parent: "Makena had a hard time with [X] today. Here are some options."
      → Options: take a break / switch to light-day mode / skip to enrichment
    - Parent/Guide makes the call
    - Choice logged in personalization memory
@@ -224,7 +224,7 @@ START (end of week, usually Friday or Sunday)
   ▼
 3. Parent Summary Report
    - Plain language summary of the week
-   - "Here's what McKenna worked on this week"
+   - "Here's what Makena worked on this week"
    - "Here's what went well"
    - "Here's what we noticed and will adjust"
    - EF notes in plain language

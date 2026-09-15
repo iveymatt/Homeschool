@@ -4,8 +4,8 @@ import BottomNav from "@/components/NavBar";
 import Sidebar from "@/components/Sidebar";
 
 export const metadata: Metadata = {
-  title: "McKenna's School",
-  description: "Personalized learning and executive function dashboard for McKenna Ray",
+  title: "Makena's School",
+  description: "Personalized learning and executive function dashboard for Makena Ray",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

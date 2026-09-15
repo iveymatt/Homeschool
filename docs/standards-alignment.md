@@ -1,5 +1,5 @@
 # California State Standards Alignment
-## Homeschool SaaS — McKenna Ray Platform
+## Homeschool SaaS — Makena Ray Platform
 
 ---
 
@@ -7,23 +7,23 @@
 
 California's Common Core State Standards (CCSS) are used here as a **reporting and comparison framework** — not as the curriculum driver.
 
-The platform's job is to teach McKenna from where she actually is and move her forward at a pace that builds confidence and competence. The standards show her family *where 8th grade expectations sit* and demonstrate that the homeschool plan is working toward a recognized, measurable goal.
+The platform's job is to teach Makena from where she actually is and move her forward at a pace that builds confidence and competence. The standards show her family *where 8th grade expectations sit* and demonstrate that the homeschool plan is working toward a recognized, measurable goal.
 
 **How standards appear in this platform:**
-- In parent summaries: "Here's what California expects at 8th grade, here's where McKenna is, here's the bridge."
+- In parent summaries: "Here's what California expects at 8th grade, here's where Makena is, here's the bridge."
 - In goal-setting: target standards give shape to 90-day and yearly goals
 - In progress tracking: skills mastered are mapped to grade-level standards to show documented growth
-- They are never shown to McKenna as "you're behind" — they are used by the adult layer only
+- They are never shown to Makena as "you're behind" — they are used by the adult layer only
 
 ---
 
-## Part 1: California 8th Grade ELA Standards — McKenna's Gap Map
+## Part 1: California 8th Grade ELA Standards — Makena's Gap Map
 
 ### CA CCSS ELA 8th Grade Key Standards
 
 **Reading: Literature and Informational Text (RI/RL.8)**
 
-| Standard ID | Description | McKenna's Status |
+| Standard ID | Description | Makena's Status |
 |---|---|---|
 | RL.8.1 | Cite textual evidence to support analysis | Developing — can identify evidence with sentence frames |
 | RL.8.2 | Determine theme/central idea; analyze development | Developing — can identify main idea, not yet theme |
@@ -38,7 +38,7 @@ The platform's job is to teach McKenna from where she actually is and move her f
 
 **Reading Foundational Skills (approaching from 6th grade)**
 
-| Standard ID | Description | McKenna's Status |
+| Standard ID | Description | Makena's Status |
 |---|---|---|
 | RF.6.4a | Read grade-level text with purpose and understanding | Approaching |
 | RF.6.4b | Read orally with accuracy, rate, expression | Active target — working on fluency |
@@ -46,7 +46,7 @@ The platform's job is to teach McKenna from where she actually is and move her f
 
 **Language (L.8)**
 
-| Standard ID | Description | McKenna's Status |
+| Standard ID | Description | Makena's Status |
 |---|---|---|
 | L.8.4 | Determine word meaning via context, affixes, roots | Developing |
 | L.8.5 | Figurative language, word relationships | Emerging |
@@ -54,9 +54,9 @@ The platform's job is to teach McKenna from where she actually is and move her f
 
 ---
 
-### CA CCSS 8th Grade Math — McKenna's Gap Map
+### CA CCSS 8th Grade Math — Makena's Gap Map
 
-| Domain | Standard ID | Description | McKenna's Status |
+| Domain | Standard ID | Description | Makena's Status |
 |---|---|---|---|
 | The Number System | 8.NS.1 | Rational vs irrational numbers | Not yet introduced |
 | Expressions & Equations | 8.EE.1 | Integer exponents | Not yet introduced |
@@ -76,7 +76,7 @@ The platform's job is to teach McKenna from where she actually is and move her f
 ## Part 2: Standards Gap Summary
 
 ### Reading
-McKenna is working at approximately **6th grade ELA level** in a student enrolled in 8th grade.
+Makena is working at approximately **6th grade ELA level** in a student enrolled in 8th grade.
 
 | Metric | Value |
 |---|---|
@@ -87,7 +87,7 @@ McKenna is working at approximately **6th grade ELA level** in a student enrolle
 | Bridge timeline (estimate) | 12–18 months with consistent daily reading support |
 
 ### Math
-McKenna is working at approximately **5th–6th grade math level** in a student enrolled in 8th grade.
+Makena is working at approximately **5th–6th grade math level** in a student enrolled in 8th grade.
 
 | Metric | Value |
 |---|---|
@@ -121,8 +121,8 @@ Each lesson the curriculum engine generates includes a standards reference field
       "grade": "7th",
       "domain": "Reading: Literature"
     },
-    "grade_level_context": "This skill is a 6th grade foundational standard. McKenna is working to solidify this before advancing to 7th grade reading standards.",
-    "parent_note": "Today's lesson targets a California 6th grade reading skill. McKenna is building this as a bridge toward 8th grade expectations."
+    "grade_level_context": "This skill is a 6th grade foundational standard. Makena is working to solidify this before advancing to 7th grade reading standards.",
+    "parent_note": "Today's lesson targets a California 6th grade reading skill. Makena is building this as a bridge toward 8th grade expectations."
   }
 }
 ```
@@ -139,7 +139,7 @@ Each lesson the curriculum engine generates includes a standards reference field
       "grade": "6th",
       "domain": "The Number System"
     },
-    "grade_level_context": "This is a 6th grade California math standard. McKenna is working to master it as part of bridging toward 7th and 8th grade math.",
+    "grade_level_context": "This is a 6th grade California math standard. Makena is working to master it as part of bridging toward 7th and 8th grade math.",
     "parent_note": "Today's math lesson covers a California 6th grade standard. Once this skill is solid, we'll move to 7th grade ratio and proportion concepts."
   }
 }
@@ -159,14 +159,14 @@ STANDARDS CONTEXT (in parent summary)
 Reading:
 "Today's reading lesson worked on [skill].
 In California, this skill is part of the [X]th grade reading standards.
-McKenna is working at approximately [Y]th grade level,
+Makena is working at approximately [Y]th grade level,
 which means she's building toward grade-level expectations on a steady path.
 Each time she completes a lesson like this, she moves closer to that target."
 
 Math:
 "Today's math lesson covered [skill].
 California's [X]th grade standards include this concept as part of [domain].
-McKenna is working through this skill now as a bridge to grade-level math.
+Makena is working through this skill now as a bridge to grade-level math.
 Her accuracy today was [Z]%, which [shows solid progress / means we'll
 practice this skill more before moving forward]."
 ```
@@ -180,7 +180,7 @@ The weekly parent summary includes a **Standards Progress Card** that can be sho
 ```json
 {
   "standards_progress_card": {
-    "student": "McKenna Ray",
+    "student": "Makena Ray",
     "week_of": "September 15–19, 2025",
     "grade_enrolled": "8th",
 
@@ -202,7 +202,7 @@ The weekly parent summary includes a **Standards Progress Card** that can be sho
       }
     ],
 
-    "parent_summary_statement": "This week McKenna worked on two California state standards: one in reading fluency (6th grade level) and one in math operations with decimals (6th grade level). Both skills are part of her bridge plan toward 8th grade expectations. This is real, standards-based curriculum — customized to where McKenna is and where she's going."
+    "parent_summary_statement": "This week Makena worked on two California state standards: one in reading fluency (6th grade level) and one in math operations with decimals (6th grade level). Both skills are part of her bridge plan toward 8th grade expectations. This is real, standards-based curriculum — customized to where Makena is and where she's going."
   }
 }
 ```
@@ -211,7 +211,7 @@ The weekly parent summary includes a **Standards Progress Card** that can be sho
 
 ## Part 6: Standards-Based Milestone Map
 
-The following milestones mark McKenna's path from current level to grade-level readiness:
+The following milestones mark Makena's path from current level to grade-level readiness:
 
 ### Reading Milestones
 
@@ -238,8 +238,8 @@ The following milestones mark McKenna's path from current level to grade-level r
 | M7 | 7.EE.4 | Two-step equations | Month 7–9 |
 | M8 | 8.EE.7 | Linear equations | Month 10–14 |
 
-Each milestone is a **celebration point** in the platform. When McKenna hits a milestone, the system:
+Each milestone is a **celebration point** in the platform. When Makena hits a milestone, the system:
 - Notifies the parent with a milestone card
-- Adds a win to McKenna's learning profile
+- Adds a win to Makena's learning profile
 - Generates a short celebration activity
 - Updates the standards progress report for family records

@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { MCKENNA, TREND_ICONS, TREND_COLORS, SCORE_LABELS, SCORE_COLORS, type EFDomain } from "@/lib/data";
+import { MAKENA, TREND_ICONS, TREND_COLORS, SCORE_LABELS, SCORE_COLORS, type EFDomain } from "@/lib/data";
 
 function ScorePip({ filled }: { filled: boolean }) {
   return (
@@ -135,7 +135,7 @@ function DomainDetail({ domain, onBack }: { domain: EFDomain; onBack: () => void
 
 export default function EFPage() {
   const [selected, setSelected] = useState<EFDomain | null>(null);
-  const domains = MCKENNA.efDomains;
+  const domains = MAKENA.efDomains;
 
   const overallScore = domains.reduce((sum, d) => sum + d.score, 0) / domains.length;
   const improving = domains.filter((d) => d.trend === "improving").length;
@@ -154,7 +154,7 @@ export default function EFPage() {
       <div>
         <p className="eyebrow">Executive Function</p>
         <h1 className="text-2xl font-semibold text-slate-800 mt-1">Growth</h1>
-        <p className="text-sm text-slate-500 mt-0.5">McKenna's independence across 9 skill areas</p>
+        <p className="text-sm text-slate-500 mt-0.5">Makena's independence across 9 skill areas</p>
       </div>
 
       {/* Overall card */}

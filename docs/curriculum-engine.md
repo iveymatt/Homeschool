@@ -1,12 +1,12 @@
 # Curriculum Engine Logic
-## Homeschool SaaS — McKenna Ray Platform
+## Homeschool SaaS — Makena Ray Platform
 
 ---
 
 ## Overview
 
 The curriculum engine does three things:
-1. **Identifies** what McKenna needs based on her profile and recent sessions
+1. **Identifies** what Makena needs based on her profile and recent sessions
 2. **Selects** appropriate skill targets and lesson formats
 3. **Adapts** tomorrow's plan based on what happened today
 
@@ -52,21 +52,21 @@ FUNCTION identifyReadingStruggleType(student, recentSessions):
     RETURN signals  // may be multiple
 ```
 
-**McKenna's reading struggle types (from profile):**
+**Makena's reading struggle types (from profile):**
 - `fluency` — reads at below-grade pace, expression is flat
 - `working_memory` — loses track of vocabulary mid-passage
 - `avoidance_frustration` — delay before starting reading tasks
 
 ### 1.2 Reading Skill Progression (Ordered)
 
-The engine moves McKenna forward through this sequence. She does not skip levels. She may circle back if accuracy drops.
+The engine moves Makena forward through this sequence. She does not skip levels. She may circle back if accuracy drops.
 
 ```
 READING_SKILL_LADDER = [
     { level: 1, skill: "phonics_decoding",      target_grade: "3rd" },
     { level: 2, skill: "sight_word_fluency",    target_grade: "4th" },
     { level: 3, skill: "oral_reading_fluency",  target_grade: "5th" },
-    { level: 4, skill: "fluency_with_expression", target_grade: "6th" },   ← McKenna is here
+    { level: 4, skill: "fluency_with_expression", target_grade: "6th" },   ← Makena is here
     { level: 5, skill: "vocabulary_in_context", target_grade: "6th-7th" },
     { level: 6, skill: "main_idea_comprehension", target_grade: "7th" },
     { level: 7, skill: "inferencing",           target_grade: "7th" },
@@ -207,7 +207,7 @@ FUNCTION identifyMathDifficultyType(student, recentSessions):
     RETURN signals
 ```
 
-**McKenna's math difficulty types (from profile):**
+**Makena's math difficulty types (from profile):**
 - `abstract_presentation` — needs visual or concrete models
 - `multi_step_sequencing` — benefits from step-by-step scaffolding
 - `confidence` — avoidance before starting math blocks
@@ -221,7 +221,7 @@ MATH_SKILL_LADDER = [
     { level: 3,  skill: "multiplication_division_fluency", target_grade: "4th-5th" },
     { level: 4,  skill: "fractions_intro",               target_grade: "4th-5th" },
     { level: 5,  skill: "fractions_operations",          target_grade: "5th" },
-    { level: 6,  skill: "decimals_and_percentages",      target_grade: "6th" },    ← McKenna approaches here
+    { level: 6,  skill: "decimals_and_percentages",      target_grade: "6th" },    ← Makena approaches here
     { level: 7,  skill: "ratios_and_proportions",        target_grade: "6th" },
     { level: 8,  skill: "intro_to_variables_expressions", target_grade: "6th-7th" },
     { level: 9,  skill: "one_step_equations",            target_grade: "7th" },
@@ -524,18 +524,18 @@ FUNCTION generateParentSummary(student, session):
 **Reading:**
 ```
 // High confidence + high completion
-"McKenna read [X pages / passage topic] today.
+"Makena read [X pages / passage topic] today.
  She worked on [skill_target]. She read with more expression than last week.
  Confidence check: [rating]/5."
 
 // Low confidence
-"McKenna worked on [skill_target] today. She needed extra support
+"Makena worked on [skill_target] today. She needed extra support
  getting started, and we used [support_type] to help her engage.
  This is normal and part of building stamina. The important thing
  is she did it."
 
 // Advance triggered
-"Today McKenna demonstrated strong enough fluency that we're
+"Today Makena demonstrated strong enough fluency that we're
  moving her to the next reading skill: [next_skill]. That's
  a real milestone."
 ```
@@ -543,12 +543,12 @@ FUNCTION generateParentSummary(student, session):
 **Math:**
 ```
 // Strong session
-"McKenna solved [N] problems on [skill] today and got [X] right
+"Makena solved [N] problems on [skill] today and got [X] right
  on the first try. She used the reference strip independently,
  which is growth. Math confidence check: [rating]/5."
 
 // Struggle session
-"Math was harder today. McKenna worked on [skill] and we noticed
+"Math was harder today. Makena worked on [skill] and we noticed
  [difficulty_type]. We kept the support high and she finished
  all [N] problems. A harder day doesn't erase the growth she's built."
 ```
@@ -605,7 +605,7 @@ At the end of each month, the system generates a monthly reflection that:
 ```json
 {
   "monthly_reflection": {
-    "student_id": "mckenna-ray-001",
+    "student_id": "makena-ray-001",
     "month": "September 2025",
     "reading": {
       "started_at": "fluency_with_expression (level 4)",

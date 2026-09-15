@@ -1,5 +1,5 @@
 "use client";
-import { MCKENNA, TODAY_PLAN, EXPERIENTIAL_LIBRARY, TREND_ICONS, TREND_COLORS, type Block } from "@/lib/data";
+import { MAKENA, TODAY_PLAN, EXPERIENTIAL_LIBRARY, TREND_ICONS, TREND_COLORS, type Block } from "@/lib/data";
 import { useLocalStorage } from "@/lib/useLocalStorage";
 
 export default function ParentPage() {
@@ -7,8 +7,8 @@ export default function ParentPage() {
     weekday: "long", month: "long", day: "numeric",
   });
 
-  // Same storage key as the Today page, so this reflects what McKenna actually completed.
-  const [blocks] = useLocalStorage<Block[]>(`mckenna-today-blocks-${TODAY_PLAN.date}`, TODAY_PLAN.blocks);
+  // Same storage key as the Today page, so this reflects what Makena actually completed.
+  const [blocks] = useLocalStorage<Block[]>(`makena-today-blocks-${TODAY_PLAN.date}`, TODAY_PLAN.blocks);
 
   const completed = blocks.filter((b) => b.status === "completed").length;
   const total = blocks.length;
@@ -22,7 +22,7 @@ export default function ParentPage() {
       {/* Header */}
       <div>
         <p className="eyebrow">Parent Summary</p>
-        <h1 className="text-2xl font-semibold text-slate-800 mt-1">{MCKENNA.name}</h1>
+        <h1 className="text-2xl font-semibold text-slate-800 mt-1">{MAKENA.name}</h1>
         <p className="text-sm text-slate-500">{today}</p>
       </div>
 
@@ -56,7 +56,7 @@ export default function ParentPage() {
         <p className="text-xs font-semibold text-sky-500 uppercase tracking-wide mb-1">📖 Reading</p>
         <p className="text-sm font-medium text-sky-800 mb-2">{TODAY_PLAN.readingFocus}</p>
         <p className="text-sm text-sky-900 leading-relaxed">
-          McKenna worked on oral reading fluency today — reading with expression at her current 6th grade level.
+          Makena worked on oral reading fluency today — reading with expression at her current 6th grade level.
           She used the vocabulary anchor card to support word retention during the passage.
           This is aligned to California&apos;s RF.6.4b reading fluency standard and builds directly
           toward her goal of reaching 7th grade reading level.
@@ -64,11 +64,11 @@ export default function ParentPage() {
         <div className="mt-3 flex gap-3">
           <div className="flex-1 bg-white rounded-xl px-3 py-2 border border-sky-100">
             <p className="text-[10px] text-sky-500 font-medium uppercase">Level</p>
-            <p className="text-sm font-semibold text-sky-800">{MCKENNA.readingLevelEstimate}</p>
+            <p className="text-sm font-semibold text-sky-800">{MAKENA.readingLevelEstimate}</p>
           </div>
           <div className="flex-1 bg-white rounded-xl px-3 py-2 border border-sky-100">
             <p className="text-[10px] text-sky-500 font-medium uppercase">Confidence</p>
-            <p className="text-sm font-semibold text-sky-800">{"⭐".repeat(MCKENNA.confidenceReading)}{"☆".repeat(5 - MCKENNA.confidenceReading)}</p>
+            <p className="text-sm font-semibold text-sky-800">{"⭐".repeat(MAKENA.confidenceReading)}{"☆".repeat(5 - MAKENA.confidenceReading)}</p>
           </div>
           <div className="flex-1 bg-white rounded-xl px-3 py-2 border border-sky-100">
             <p className="text-[10px] text-sky-500 font-medium uppercase">CA Standard</p>
@@ -82,7 +82,7 @@ export default function ParentPage() {
         <p className="text-xs font-semibold text-violet-500 uppercase tracking-wide mb-1">➕ Math</p>
         <p className="text-sm font-medium text-violet-800 mb-2">{TODAY_PLAN.mathFocus}</p>
         <p className="text-sm text-violet-900 leading-relaxed">
-          McKenna worked on decimal operations today, a California 6th grade math standard (6.NS.3).
+          Makena worked on decimal operations today, a California 6th grade math standard (6.NS.3).
           Problems were presented one at a time with a reference strip visible throughout.
           This visual scaffold reduces cognitive load and lets her focus on the math itself
           rather than holding multiple steps in working memory at once.
@@ -90,11 +90,11 @@ export default function ParentPage() {
         <div className="mt-3 flex gap-3">
           <div className="flex-1 bg-white rounded-xl px-3 py-2 border border-violet-100">
             <p className="text-[10px] text-violet-500 font-medium uppercase">Level</p>
-            <p className="text-sm font-semibold text-violet-800">{MCKENNA.mathLevelEstimate}</p>
+            <p className="text-sm font-semibold text-violet-800">{MAKENA.mathLevelEstimate}</p>
           </div>
           <div className="flex-1 bg-white rounded-xl px-3 py-2 border border-violet-100">
             <p className="text-[10px] text-violet-500 font-medium uppercase">Confidence</p>
-            <p className="text-sm font-semibold text-violet-800">{"⭐".repeat(MCKENNA.confidenceMath)}{"☆".repeat(5 - MCKENNA.confidenceMath)}</p>
+            <p className="text-sm font-semibold text-violet-800">{"⭐".repeat(MAKENA.confidenceMath)}{"☆".repeat(5 - MAKENA.confidenceMath)}</p>
           </div>
           <div className="flex-1 bg-white rounded-xl px-3 py-2 border border-violet-100">
             <p className="text-[10px] text-violet-500 font-medium uppercase">CA Standard</p>
@@ -134,7 +134,7 @@ export default function ParentPage() {
         </summary>
         <div className="px-4 pb-4 pt-1 space-y-3 border-t border-slate-50">
           <p className="text-xs text-slate-400">
-            Real activities from McKenna's life, mapped to standards — available to pull into any day's plan.
+            Real activities from Makena's life, mapped to standards — available to pull into any day's plan.
           </p>
           {EXPERIENTIAL_LIBRARY.map((activity) => (
             <div key={activity.id} className="bg-slate-50 border border-slate-100 rounded-xl p-3">
@@ -163,7 +163,7 @@ export default function ParentPage() {
       <div className="bg-white border border-slate-100 rounded-2xl p-4 shadow-sm">
         <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-3">🌱 Executive Function</p>
         <div className="space-y-3">
-          {MCKENNA.efDomains.filter((d) => d.trend === "improving").map((domain) => (
+          {MAKENA.efDomains.filter((d) => d.trend === "improving").map((domain) => (
             <div key={domain.key} className="flex items-start gap-3">
               <span className={`text-sm font-bold mt-0.5 ${TREND_COLORS[domain.trend]}`}>
                 {TREND_ICONS[domain.trend]}
@@ -181,16 +181,16 @@ export default function ParentPage() {
       <div className="bg-slate-800 text-white rounded-2xl p-4">
         <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-2">CA Standards Context</p>
         <p className="text-sm text-slate-200 leading-relaxed">
-          McKenna is a freshman at {MCKENNA.school}, working at approximately 6th grade level in
+          Makena is a freshman at {MAKENA.school}, working at approximately 6th grade level in
           reading and math — about a 3-year gap. This plan bridges that gap using California
           Common Core State Standards as the target. Every lesson maps to a specific standard and
           moves her forward along a documented skill ladder. This is real, standards-based work.
         </p>
         <div className="mt-3 grid grid-cols-2 gap-2">
           {[
-            { label: "Enrolled Grade", value: MCKENNA.enrolledGrade },
-            { label: "Reading Level", value: MCKENNA.readingLevelEstimate },
-            { label: "Math Level", value: MCKENNA.mathLevelEstimate },
+            { label: "Enrolled Grade", value: MAKENA.enrolledGrade },
+            { label: "Reading Level", value: MAKENA.readingLevelEstimate },
+            { label: "Math Level", value: MAKENA.mathLevelEstimate },
             { label: "Standards Ref", value: "CA CCSS" },
           ].map((item) => (
             <div key={item.label} className="bg-slate-700 rounded-xl px-3 py-2">
@@ -206,10 +206,10 @@ export default function ParentPage() {
         <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-3">School & Support Team</p>
         <div className="flex items-center justify-between text-sm mb-2">
           <span className="text-slate-500">School</span>
-          <span className="font-medium text-slate-700">{MCKENNA.school}</span>
+          <span className="font-medium text-slate-700">{MAKENA.school}</span>
         </div>
         <ul className="space-y-2 mt-2">
-          {MCKENNA.programNotes.map((note, i) => (
+          {MAKENA.programNotes.map((note, i) => (
             <li key={i} className="flex items-start gap-2 text-sm text-slate-600">
               <span className="flex-shrink-0 mt-0.5 text-sage-500">○</span>
               {note}
@@ -222,7 +222,7 @@ export default function ParentPage() {
       <div className="bg-green-50 border border-green-200 rounded-2xl p-4">
         <p className="text-xs font-semibold text-green-600 uppercase tracking-wide mb-2">Recent Wins</p>
         <ul className="space-y-2">
-          {MCKENNA.recentWins.map((win, i) => (
+          {MAKENA.recentWins.map((win, i) => (
             <li key={i} className="flex items-start gap-2 text-sm text-green-800">
               <span className="flex-shrink-0 mt-0.5">✓</span>
               {win}
@@ -245,7 +245,7 @@ export default function ParentPage() {
       <div className="bg-white border border-slate-100 rounded-2xl p-4 shadow-sm">
         <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-3">30-Day Goals</p>
         <ul className="space-y-2">
-          {MCKENNA.goals30Day.map((goal, i) => (
+          {MAKENA.goals30Day.map((goal, i) => (
             <li key={i} className="flex items-start gap-2 text-sm text-slate-700">
               <span className="flex-shrink-0 mt-0.5 text-sage-500">○</span>
               {goal}

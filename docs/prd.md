@@ -1,12 +1,12 @@
 # Product Requirements Document
 ## Homeschool SaaS — MVP v1
-### Student: McKenna Ray
+### Student: Makena Ray
 
 ---
 
 ## Overview
 
-A personalized homeschool operating system for McKenna Ray. This platform replaces ad-hoc worksheets with a structured, adaptive, neurodivergent-friendly daily learning system. It gives her mother and grandmother visible proof that homeschooling is organized, tracked, and working.
+A personalized homeschool operating system for Makena Ray. This platform replaces ad-hoc worksheets with a structured, adaptive, neurodivergent-friendly daily learning system. It gives her mother and grandmother visible proof that homeschooling is organized, tracked, and working.
 
 **Not:** a testing app, a school-at-home clone, or a generic edtech product.
 **Is:** a calm, structured daily learning home base built around one student.
@@ -15,7 +15,7 @@ A personalized homeschool operating system for McKenna Ray. This platform replac
 
 ## Problem Statement
 
-McKenna Ray needs a homeschool structure that:
+Makena Ray needs a homeschool structure that:
 - Matches her cognitive profile and likely neurodivergent needs
 - Builds reading and math skills without overwhelming her
 - Creates visible routine and predictable daily flow
@@ -45,7 +45,7 @@ No existing tool does all of this without heavy customization or feeling clinica
 
 ## Users
 
-### Student (McKenna Ray)
+### Student (Makena Ray)
 - Needs: simple dashboard, clear daily steps, low clutter, visual progress, encouraging tone
 - Interaction: daily learner, follows Today's Plan, completes tasks, does confidence checks
 
@@ -106,7 +106,7 @@ No existing tool does all of this without heavy customization or feeling clinica
 
 ## Constraints
 
-- MVP builds for one student (McKenna Ray)
+- MVP builds for one student (Makena Ray)
 - Must run as a web app (no native app required for MVP)
 - Must be operable by a non-technical adult guide
 - Lesson delivery must not require internet-dependent external content in core flow

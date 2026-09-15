@@ -17,8 +17,8 @@ export interface EFSupport {
 }
 
 // Standards are for the parent/adult layer only — never surfaced in student-facing views.
-// See docs/standards-alignment.md: standards show the bridge from where McKenna is to
-// 8th grade expectations, they are never shown to McKenna as "you're behind."
+// See docs/standards-alignment.md: standards show the bridge from where Makena is to
+// 8th grade expectations, they are never shown to Makena as "you're behind."
 export interface StandardRef {
   id: string;
   description: string;
@@ -110,12 +110,12 @@ export interface StudentProfile {
   currentStruggleFlags: string[];
 }
 
-// ─── McKenna's Profile ───────────────────────────────────────────────────────
+// ─── Makena's Profile ───────────────────────────────────────────────────────
 
-export const MCKENNA: StudentProfile = {
-  id: "mckenna-ray-001",
-  name: "McKenna Ray",
-  nickname: "McKenna",
+export const MAKENA: StudentProfile = {
+  id: "makena-ray-001",
+  name: "Makena Ray",
+  nickname: "Makena",
   age: 14,
   enrolledGrade: "9th (Freshman)",
   school: "Casa Grande High School — Petaluma, CA",
@@ -175,7 +175,7 @@ export const MCKENNA: StudentProfile = {
         "Using a personal motivational phrase",
       ],
       supportDescription:
-        "McKenna sometimes needs a gentle push to start a task. We show her one small first step — not the whole thing — and she gets going.",
+        "Makena sometimes needs a gentle push to start a task. We show her one small first step — not the whole thing — and she gets going.",
     },
     {
       key: "planning_organization",
@@ -194,7 +194,7 @@ export const MCKENNA: StudentProfile = {
         "Giving a one-sentence preview of the block",
       ],
       supportDescription:
-        "McKenna does well when she can see the whole plan before starting. We lay out the steps so there are no surprises.",
+        "Makena does well when she can see the whole plan before starting. We lay out the steps so there are no surprises.",
     },
     {
       key: "working_memory",
@@ -213,7 +213,7 @@ export const MCKENNA: StudentProfile = {
         "Using read-aloud + visual instructions together",
       ],
       supportDescription:
-        "McKenna benefits from having key information stay visible while she works — it reduces the mental load so she can focus on the actual task.",
+        "Makena benefits from having key information stay visible while she works — it reduces the mental load so she can focus on the actual task.",
     },
     {
       key: "transitions",
@@ -232,7 +232,7 @@ export const MCKENNA: StudentProfile = {
         "Building a movement break between subjects",
       ],
       supportDescription:
-        "Switching between activities can be hard for McKenna. We give advance notice and a clear naming of what's changing — it's not resistance, it's how her brain shifts gears.",
+        "Switching between activities can be hard for Makena. We give advance notice and a clear naming of what's changing — it's not resistance, it's how her brain shifts gears.",
     },
     {
       key: "sustained_focus",
@@ -251,7 +251,7 @@ export const MCKENNA: StudentProfile = {
         "Showing one task at a time — not the whole lesson",
       ],
       supportDescription:
-        "McKenna focuses best in shorter bursts with a clear endpoint. We keep lessons brief and always open with something connected to what she cares about.",
+        "Makena focuses best in shorter bursts with a clear endpoint. We keep lessons brief and always open with something connected to what she cares about.",
     },
     {
       key: "task_completion",
@@ -270,7 +270,7 @@ export const MCKENNA: StudentProfile = {
         "Removing bonus/optional content that blurs the finish line",
       ],
       supportDescription:
-        "McKenna sometimes moves on before fully finishing. We use a clear 'done' moment so her brain can register closure and feel the win.",
+        "Makena sometimes moves on before fully finishing. We use a clear 'done' moment so her brain can register closure and feel the win.",
     },
     {
       key: "emotional_regulation",
@@ -289,7 +289,7 @@ export const MCKENNA: StudentProfile = {
         "Building in reflection after frustrating moments",
       ],
       supportDescription:
-        "When something is hard, McKenna can shut down. We keep error feedback gentle and focus on 'let's figure it out together' rather than right/wrong.",
+        "When something is hard, Makena can shut down. We keep error feedback gentle and focus on 'let's figure it out together' rather than right/wrong.",
     },
     {
       key: "time_awareness",
@@ -308,7 +308,7 @@ export const MCKENNA: StudentProfile = {
         "Giving a 2-minute warning before blocks end",
       ],
       supportDescription:
-        "McKenna's sense of how long tasks take is still developing. We anchor time in things she understands — like how many songs or minutes of a show.",
+        "Makena's sense of how long tasks take is still developing. We anchor time in things she understands — like how many songs or minutes of a show.",
     },
     {
       key: "impulse_control",
@@ -327,7 +327,7 @@ export const MCKENNA: StudentProfile = {
         "Building in pause moments mid-lesson",
       ],
       supportDescription:
-        "McKenna sometimes jumps ahead before finishing the current step. Showing only one thing at a time helps her slow down and complete before moving on.",
+        "Makena sometimes jumps ahead before finishing the current step. Showing only one thing at a time helps her slow down and complete before moving on.",
     },
   ],
 };
@@ -399,8 +399,8 @@ export const TODAY_PLAN: DailyPlan = {
           grade: "7th",
           domain: "Reading: Literature",
         },
-        gradeLevelContext: "This is a 6th grade foundational reading standard. McKenna is solidifying it now as the bridge toward high school reading expectations at Casa Grande.",
-        parentNote: "Today's reading lesson targets a California 6th grade fluency standard. Each session like this moves McKenna closer to grade-level reading.",
+        gradeLevelContext: "This is a 6th grade foundational reading standard. Makena is solidifying it now as the bridge toward high school reading expectations at Casa Grande.",
+        parentNote: "Today's reading lesson targets a California 6th grade fluency standard. Each session like this moves Makena closer to grade-level reading.",
       },
     },
     {
@@ -449,7 +449,7 @@ export const TODAY_PLAN: DailyPlan = {
           grade: "6th",
           domain: "The Number System",
         },
-        gradeLevelContext: "This is a 6th grade California math standard. McKenna is working to master it as part of bridging toward high school math.",
+        gradeLevelContext: "This is a 6th grade California math standard. Makena is working to master it as part of bridging toward high school math.",
         parentNote: "Today's math lesson covers a California 6th grade decimals standard. Once this is solid, we'll move to 7th grade ratio and proportion concepts.",
       },
     },
@@ -482,7 +482,7 @@ export const TODAY_PLAN: DailyPlan = {
           domain: "Life Science — Structure & Function",
         },
         gradeLevelContext: "Real ranch work: measuring hoof trims in decimal inches practices the same 6th grade decimals skill as her math block, and the hoof-anatomy discussion applies middle school life science structure-and-function concepts hands-on.",
-        parentNote: "McKenna's farrier work today wasn't just a hobby — the measuring practiced her math standard (6.NS.3, decimals) and the anatomy discussion touched middle school life science (structure & function). Real-world experience, real academic credit.",
+        parentNote: "Makena's farrier work today wasn't just a hobby — the measuring practiced her math standard (6.NS.3, decimals) and the anatomy discussion touched middle school life science (structure & function). Real-world experience, real academic credit.",
       },
       efSupport: {
         before: "You just got done at the ranch — nice work. Let's capture what you did while it's fresh.",
@@ -557,10 +557,10 @@ export const SCORE_COLORS: Record<number, string> = {
 };
 
 // ─── Real-World Learning Library ────────────────────────────────────────────
-// Real activities from McKenna's life, mapped to California standards for
+// Real activities from Makena's life, mapped to California standards for
 // parent/team reporting. Not all of these are in today's plan — they're
 // available to pull into any day's Experiential block. Standards are shown
-// to the parent/team layer only, never to McKenna as "you're behind."
+// to the parent/team layer only, never to Makena as "you're behind."
 
 export const EXPERIENTIAL_LIBRARY: Block[] = [
   {
@@ -592,7 +592,7 @@ export const EXPERIENTIAL_LIBRARY: Block[] = [
         domain: "Life Science — Structure & Function",
       },
       gradeLevelContext: "Measuring hoof trims in decimal inches practices the same 6th grade decimals skill as her math block; the anatomy discussion applies middle school life science structure-and-function concepts hands-on.",
-      parentNote: "McKenna's farrier work isn't just a hobby — the measuring practices her math standard (6.NS.3, decimals) and the anatomy discussion touches middle school life science (structure & function).",
+      parentNote: "Makena's farrier work isn't just a hobby — the measuring practices her math standard (6.NS.3, decimals) and the anatomy discussion touches middle school life science (structure & function).",
     },
   },
   {
@@ -624,7 +624,7 @@ export const EXPERIENTIAL_LIBRARY: Block[] = [
         domain: "Science & Technical Literacy",
       },
       gradeLevelContext: "A hands-on college-level dissection lab applies middle school life science structure-and-function standards directly, and following the dissection procedure builds the technical-literacy skill of following a multistep process.",
-      parentNote: "This wasn't a worksheet — McKenna worked through an actual college-level dissection lab. That's authentic application of standards most students only see in a textbook.",
+      parentNote: "This wasn't a worksheet — Makena worked through an actual college-level dissection lab. That's authentic application of standards most students only see in a textbook.",
     },
     efSupport: {
       before: "This is hands-on and might be intense — that's okay. Go at your own pace.",
@@ -659,8 +659,8 @@ export const EXPERIENTIAL_LIBRARY: Block[] = [
         grade: "6th",
         domain: "Speaking & Listening",
       },
-      gradeLevelContext: "Giving clear, sequenced verbal instructions to younger athletes is grade-level speaking-and-listening work — a standard where McKenna's real-world coaching experience meets or exceeds her enrolled grade band, not behind it.",
-      parentNote: "McKenna's coaching today is genuine high school-level speaking-and-listening practice — explaining steps clearly to someone else is a more demanding skill than just following instructions herself.",
+      gradeLevelContext: "Giving clear, sequenced verbal instructions to younger athletes is grade-level speaking-and-listening work — a standard where Makena's real-world coaching experience meets or exceeds her enrolled grade band, not behind it.",
+      parentNote: "Makena's coaching today is genuine high school-level speaking-and-listening practice — explaining steps clearly to someone else is a more demanding skill than just following instructions herself.",
     },
     efSupport: {
       after: "Teaching someone else means you really know it. Nice work today.",
@@ -695,7 +695,7 @@ export const EXPERIENTIAL_LIBRARY: Block[] = [
         domain: "Writing",
       },
       gradeLevelContext: "Tracking hours, pay, and quantities while babysitting practices the same rate-and-ratio reasoning as her math bridge work, and writing up the log practices clear, organized writing at grade level.",
-      parentNote: "Babysitting is real responsibility and real math — hourly pay, timing, and measuring are practical applications of the ratio skills McKenna is building toward in her math block.",
+      parentNote: "Babysitting is real responsibility and real math — hourly pay, timing, and measuring are practical applications of the ratio skills Makena is building toward in her math block.",
     },
   },
 ];

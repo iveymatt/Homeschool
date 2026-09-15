@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { MCKENNA, TODAY_PLAN, SUBJECT_ICONS, SUBJECT_COLORS, type Block } from "@/lib/data";
+import { MAKENA, TODAY_PLAN, SUBJECT_ICONS, SUBJECT_COLORS, type Block } from "@/lib/data";
 import { useLocalStorage } from "@/lib/useLocalStorage";
 
 const MOODS = [
@@ -11,10 +11,10 @@ const MOODS = [
 ];
 
 export default function HomePage() {
-  const [mood, setMood] = useLocalStorage<string | null>(`mckenna-mood-${TODAY_PLAN.date}`, null);
-  const [moodDone, setMoodDone] = useLocalStorage<boolean>(`mckenna-mood-done-${TODAY_PLAN.date}`, false);
+  const [mood, setMood] = useLocalStorage<string | null>(`makena-mood-${TODAY_PLAN.date}`, null);
+  const [moodDone, setMoodDone] = useLocalStorage<boolean>(`makena-mood-done-${TODAY_PLAN.date}`, false);
   // Same storage key as the Today page, so completing a block there updates this dashboard too.
-  const [blocks] = useLocalStorage<Block[]>(`mckenna-today-blocks-${TODAY_PLAN.date}`, TODAY_PLAN.blocks);
+  const [blocks] = useLocalStorage<Block[]>(`makena-today-blocks-${TODAY_PLAN.date}`, TODAY_PLAN.blocks);
 
   const completed = blocks.filter((b) => b.status === "completed").length;
   const total = blocks.length;
@@ -32,9 +32,9 @@ export default function HomePage() {
     <div className="pt-6 space-y-5">
       {/* Header */}
       <div>
-        <p className="eyebrow">McKenna's Learning Hub</p>
+        <p className="eyebrow">Makena's Learning Hub</p>
         <h1 className="text-2xl font-semibold text-slate-800 mt-1">
-          Good morning, {MCKENNA.nickname}
+          Good morning, {MAKENA.nickname}
         </h1>
         <p className="text-sm text-slate-500 mt-0.5">{today}</p>
       </div>
@@ -156,19 +156,19 @@ export default function HomePage() {
         <div className="px-4 pb-4 pt-1 space-y-2 border-t border-slate-50">
           <div className="flex justify-between text-sm">
             <span className="text-slate-500">Reading confidence</span>
-            <span className="font-medium text-slate-700">{"⭐".repeat(MCKENNA.confidenceReading)}{"☆".repeat(5 - MCKENNA.confidenceReading)}</span>
+            <span className="font-medium text-slate-700">{"⭐".repeat(MAKENA.confidenceReading)}{"☆".repeat(5 - MAKENA.confidenceReading)}</span>
           </div>
           <div className="flex justify-between text-sm">
             <span className="text-slate-500">Math confidence</span>
-            <span className="font-medium text-slate-700">{"⭐".repeat(MCKENNA.confidenceMath)}{"☆".repeat(5 - MCKENNA.confidenceMath)}</span>
+            <span className="font-medium text-slate-700">{"⭐".repeat(MAKENA.confidenceMath)}{"☆".repeat(5 - MAKENA.confidenceMath)}</span>
           </div>
           <div className="flex justify-between text-sm">
             <span className="text-slate-500">Reading level</span>
-            <span className="font-medium text-slate-700">{MCKENNA.readingLevelEstimate}</span>
+            <span className="font-medium text-slate-700">{MAKENA.readingLevelEstimate}</span>
           </div>
           <div className="flex justify-between text-sm">
             <span className="text-slate-500">Enrolled grade</span>
-            <span className="font-medium text-slate-700">{MCKENNA.enrolledGrade}</span>
+            <span className="font-medium text-slate-700">{MAKENA.enrolledGrade}</span>
           </div>
           <Link href="/parent" className="block mt-2 text-center text-sm text-sage-600 font-medium py-2 bg-sage-50 rounded-xl">
             View Full Parent Summary →

@@ -1,5 +1,5 @@
 "use client";
-import { MCKENNA } from "@/lib/data";
+import { MAKENA } from "@/lib/data";
 
 const READING_LADDER = [
   { level: 1, skill: "Phonics & Decoding", grade: "3rd" },
@@ -67,7 +67,7 @@ export default function ProgressPage() {
       <div>
         <p className="eyebrow">Growth Over Time</p>
         <h1 className="text-2xl font-semibold text-slate-800 mt-1">Progress</h1>
-        <p className="text-sm text-slate-500 mt-0.5">McKenna&apos;s skill ladder — updated each session</p>
+        <p className="text-sm text-slate-500 mt-0.5">Makena&apos;s skill ladder — updated each session</p>
       </div>
 
       {/* Streak + overview */}
@@ -91,16 +91,16 @@ export default function ProgressPage() {
         <div className="flex items-center justify-between mb-3">
           <h2 className="text-sm font-semibold text-slate-700 uppercase tracking-wide">📖 Reading Ladder</h2>
           <span className="text-xs text-sky-600 font-medium bg-sky-50 border border-sky-200 px-2 py-1 rounded-full">
-            Level {MCKENNA.readingLadderLevel} of {READING_LADDER.length}
+            Level {MAKENA.readingLadderLevel} of {READING_LADDER.length}
           </span>
         </div>
         <div className="h-2 bg-slate-100 rounded-full mb-3 overflow-hidden">
           <div
             className="h-full bg-sky-400 rounded-full"
-            style={{ width: `${((MCKENNA.readingLadderLevel - 1) / (READING_LADDER.length - 1)) * 100}%` }}
+            style={{ width: `${((MAKENA.readingLadderLevel - 1) / (READING_LADDER.length - 1)) * 100}%` }}
           />
         </div>
-        <LadderBar levels={READING_LADDER} currentLevel={MCKENNA.readingLadderLevel} color="bg-sky-50 border-sky-300 text-sky-800" />
+        <LadderBar levels={READING_LADDER} currentLevel={MAKENA.readingLadderLevel} color="bg-sky-50 border-sky-300 text-sky-800" />
       </div>
 
       {/* Math ladder */}
@@ -108,23 +108,23 @@ export default function ProgressPage() {
         <div className="flex items-center justify-between mb-3">
           <h2 className="text-sm font-semibold text-slate-700 uppercase tracking-wide">➕ Math Ladder</h2>
           <span className="text-xs text-violet-600 font-medium bg-violet-50 border border-violet-200 px-2 py-1 rounded-full">
-            Level {MCKENNA.mathLadderLevel} of {MATH_LADDER.length}
+            Level {MAKENA.mathLadderLevel} of {MATH_LADDER.length}
           </span>
         </div>
         <div className="h-2 bg-slate-100 rounded-full mb-3 overflow-hidden">
           <div
             className="h-full bg-violet-400 rounded-full"
-            style={{ width: `${((MCKENNA.mathLadderLevel - 1) / (MATH_LADDER.length - 1)) * 100}%` }}
+            style={{ width: `${((MAKENA.mathLadderLevel - 1) / (MATH_LADDER.length - 1)) * 100}%` }}
           />
         </div>
-        <LadderBar levels={MATH_LADDER} currentLevel={MCKENNA.mathLadderLevel} color="bg-violet-50 border-violet-300 text-violet-800" />
+        <LadderBar levels={MATH_LADDER} currentLevel={MAKENA.mathLadderLevel} color="bg-violet-50 border-violet-300 text-violet-800" />
       </div>
 
       {/* Recent wins */}
       <div className="bg-green-50 border border-green-200 rounded-2xl p-4">
         <p className="text-xs font-semibold text-green-600 uppercase tracking-wide mb-3">Recent Wins</p>
         <ul className="space-y-2">
-          {MCKENNA.recentWins.map((win, i) => (
+          {MAKENA.recentWins.map((win, i) => (
             <li key={i} className="flex items-start gap-2 text-sm text-green-800">
               <span className="flex-shrink-0 mt-0.5">🏆</span> {win}
             </li>

@@ -5,7 +5,7 @@ import { useLocalStorage } from "@/lib/useLocalStorage";
 
 export default function TodayPage() {
   const [blocks, setBlocks, blocksLoaded] = useLocalStorage<Block[]>(
-    `mckenna-today-blocks-${TODAY_PLAN.date}`,
+    `makena-today-blocks-${TODAY_PLAN.date}`,
     TODAY_PLAN.blocks
   );
   const [activeId, setActiveId] = useState<string | null>(null);
@@ -77,7 +77,7 @@ export default function TodayPage() {
         <div className="bg-sage-50 border border-sage-200 rounded-2xl p-5 text-center">
           <p className="text-3xl mb-2">🎉</p>
           <p className="text-lg font-semibold text-sage-800">You finished today's plan!</p>
-          <p className="text-sm text-sage-600 mt-1">Great work, McKenna. You did it.</p>
+          <p className="text-sm text-sage-600 mt-1">Great work, Makena. You did it.</p>
         </div>
       )}
 

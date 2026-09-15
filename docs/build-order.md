@@ -20,7 +20,7 @@ Close that loop before building anything else.
 - Define and implement `student_profiles` schema (see `data-schema.md`)
 - Build the parent-facing setup form (5-step intake flow)
 - Store profile in local state (no auth required yet)
-- Output: parent can fill out McKenna's profile and save it
+- Output: parent can fill out Makena's profile and save it
 
 ### 1.2 Static Home Dashboard
 - Build the Home Dashboard layout (see `wireframes.md`)
@@ -77,7 +77,7 @@ Close that loop before building anything else.
 
 ### 3.1 EF Profile Schema
 - Implement EF domain tracking within student profile
-- Set default support levels for McKenna based on intake answers
+- Set default support levels for Makena based on intake answers
 - Output: EF profile is stored and readable
 
 ### 3.2 EF Support Injection
@@ -169,7 +169,7 @@ Close that loop before building anything else.
 
 ### 6.2 Standards Progress Card in Parent Summary
 - Add `standards_progress_card` section to daily and weekly parent summaries
-- Plain-language statement: "Here's what California expects, here's where McKenna is"
+- Plain-language statement: "Here's what California expects, here's where Makena is"
 - Output: parent summary includes standards context in plain English
 
 ### 6.3 Skill Milestone Detection + Celebration
@@ -202,7 +202,7 @@ Close that loop before building anything else.
 - Output: data survives refresh and next-day session
 
 ### 7.3 Sample Data for Demo
-- Load McKenna's full profile (see `json/student-profile-mckenna.json`)
+- Load Makena's full profile (see `json/student-profile-makena.json`)
 - Load sample week of lessons
 - Load sample parent summaries
 - Output: platform can be demonstrated without going through full setup

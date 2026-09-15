@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { MCKENNA } from "@/lib/data";
+import { MAKENA } from "@/lib/data";
 
 const NAV = [
   { href: "/", label: "Home Dashboard" },
@@ -18,9 +18,9 @@ export default function Sidebar() {
   return (
     <aside className="hidden md:flex md:flex-col md:w-64 md:flex-shrink-0 md:border-r md:border-sage-100 md:px-5 md:py-10">
       <div className="bg-sage-50 border border-sage-100 rounded-2xl p-4 mb-6">
-        <p className="eyebrow">McKenna's Learning Hub</p>
+        <p className="eyebrow">Makena's Learning Hub</p>
         <p className="text-lg font-semibold text-slate-800 mt-1" style={{ fontFamily: "var(--font-display)" }}>
-          {MCKENNA.name}
+          {MAKENA.name}
         </p>
         <p className="text-xs text-slate-500 mt-1 leading-relaxed">
           Calm, confidence-building daily flow

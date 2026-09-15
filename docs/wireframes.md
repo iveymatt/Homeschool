@@ -11,7 +11,7 @@
 │  [Logo]                      [Parent View]  [⚙] │
 ├─────────────────────────────────────────────────┤
 │                                                 │
-│  Good morning, McKenna! ☀️                      │
+│  Good morning, Makena! ☀️                      │
 │  Wednesday, September 15                        │
 │                                                 │
 ├─────────────────────────────────────────────────┤
@@ -161,7 +161,7 @@
 ```
 ┌─────────────────────────────────────────────────┐
 │  ← Back      EXECUTIVE FUNCTION SUPPORTS        │
-│              McKenna Ray · Updated Today         │
+│              Makena Ray · Updated Today         │
 ├─────────────────────────────────────────────────┤
 │                                                 │
 │  OVERALL INDEPENDENCE SCORE                     │
@@ -208,7 +208,7 @@
 │                                                 │
 │  ┌──────────────────────────────────────────┐   │
 │  │  WHAT THIS MEANS                         │   │
-│  │  McKenna often needs encouragement to    │   │
+│  │  Makena often needs encouragement to    │   │
 │  │  start a task on her own. This is        │   │
 │  │  common and improvable with consistent   │   │
 │  │  support.                                │   │

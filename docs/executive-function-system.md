@@ -1,5 +1,5 @@
 # Executive Function Support System
-## Homeschool SaaS — McKenna Ray Platform
+## Homeschool SaaS — Makena Ray Platform
 
 ---
 
@@ -9,7 +9,7 @@ The platform tracks nine EF skill domains. Each domain has an independence score
 
 | Domain | Key Question | Observable Signals |
 |---|---|---|
-| **task_initiation** | Can McKenna start a task without repeated prompting? | Delay before starting, requires multiple cues, avoids opening materials |
+| **task_initiation** | Can Makena start a task without repeated prompting? | Delay before starting, requires multiple cues, avoids opening materials |
 | **planning_organization** | Can she sequence steps and know what comes first? | Skips steps, starts in the middle, loses materials |
 | **working_memory** | Can she hold task instructions while completing the task? | Forgets directions mid-task, loses place in reading, re-asks same question |
 | **transitions** | Can she shift between subjects or activities smoothly? | Meltdowns at block changes, refuses to stop one activity, needs long wind-down |
@@ -449,42 +449,42 @@ EF_PLAIN_LABELS = {
 
 ```
 task_initiation:
-    score 0–1: "McKenna needed several reminders before she could start her reading today.
+    score 0–1: "Makena needed several reminders before she could start her reading today.
                 We used a 'first step only' prompt — we only asked her to open the page,
                 nothing else. She got going within 3 minutes. This is normal and something
                 we'll keep supporting."
-    score 2–3: "McKenna got started on her own after one reminder today. That's progress."
-    score 4:   "McKenna opened her lesson and started reading without any prompting. That's
+    score 2–3: "Makena got started on her own after one reminder today. That's progress."
+    score 4:   "Makena opened her lesson and started reading without any prompting. That's
                 a real sign of growth in her ability to self-start."
 
 working_memory:
-    score 0–1: "McKenna kept losing track of the reading instructions today, so we kept the
+    score 0–1: "Makena kept losing track of the reading instructions today, so we kept the
                 key vocabulary words visible on the screen throughout the whole lesson. This
                 is a working memory support — it reduces the mental load so she can focus on
                 reading, not on remembering what words mean."
-    score 2–3: "McKenna referred to the vocabulary card twice today and was able to stay on
+    score 2–3: "Makena referred to the vocabulary card twice today and was able to stay on
                 track. We'll keep that support available but are watching for signs she may
                 need it less."
-    score 4:   "McKenna completed today's reading without referencing the vocabulary card.
+    score 4:   "Makena completed today's reading without referencing the vocabulary card.
                 She's building stronger working memory stamina."
 
 transitions:
     score 0–1: "Switching from reading to math was hard today. We gave two warnings before
                 the transition and used a short movement break in between. This kind of
-                structure helps McKenna's brain shift gears — it's not stubbornness, it's
+                structure helps Makena's brain shift gears — it's not stubbornness, it's
                 how her nervous system works."
-    score 2–3: "McKenna moved from reading to math with just one reminder today. Transitions
+    score 2–3: "Makena moved from reading to math with just one reminder today. Transitions
                 are getting smoother."
-    score 4:   "McKenna transitioned between subjects independently today without any
+    score 4:   "Makena transitioned between subjects independently today without any
                 reminders. Big progress."
 
 task_completion:
-    score 0–1: "McKenna had a hard time finishing tasks today — she tended to move on before
+    score 0–1: "Makena had a hard time finishing tasks today — she tended to move on before
                 fully completing them. We used explicit 'You're done' confirmation messages
                 and a required Done button. This helps her brain register closure."
-    score 2–3: "McKenna finished both her reading and math tasks today with one completion
+    score 2–3: "Makena finished both her reading and math tasks today with one completion
                 prompt. She's learning to close the loop."
-    score 4:   "McKenna completed all tasks fully and independently today. No prompting needed
+    score 4:   "Makena completed all tasks fully and independently today. No prompting needed
                 to finish."
 ```
 
@@ -495,7 +495,7 @@ task_completion:
 ```json
 {
   "ef_profile": {
-    "student_id": "mckenna-ray-001",
+    "student_id": "makena-ray-001",
     "last_updated": "2025-09-15",
     "domains": {
       "task_initiation": {
@@ -583,7 +583,7 @@ task_completion:
 {
   "ef_session_log": {
     "session_id": "session-2025-09-15-001",
-    "student_id": "mckenna-ray-001",
+    "student_id": "makena-ray-001",
     "date": "2025-09-15",
     "subject": "reading",
     "domain_logs": [
@@ -640,7 +640,7 @@ task_completion:
 {
   "ef_support_object": {
     "lesson_id": "lesson-reading-2025-09-15",
-    "student_id": "mckenna-ray-001",
+    "student_id": "makena-ray-001",
     "subject": "reading",
     "ef_supports": [
       {

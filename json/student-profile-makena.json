@@ -1,11 +1,11 @@
 {
-  "id": "mckenna-ray-001",
+  "id": "makena-ray-001",
   "created_at": "2025-09-01T09:00:00Z",
   "updated_at": "2025-09-15T08:30:00Z",
 
   "identity": {
-    "full_name": "McKenna Ray",
-    "nickname": "McKenna",
+    "full_name": "Makena Ray",
+    "nickname": "Makena",
     "age": 13,
     "grade_level": "8th",
     "homeschool_status": "active"
@@ -25,7 +25,7 @@
       "Complete daily homeschool plan with decreasing prompting over time"
     ],
     "standards_reference": "California Common Core State Standards (CCSS) — 8th grade",
-    "standards_gap_summary": "McKenna is working approximately 2 grade levels below California 8th grade ELA standards and is approaching grade-level math with targeted support."
+    "standards_gap_summary": "Makena is working approximately 2 grade levels below California 8th grade ELA standards and is approaching grade-level math with targeted support."
   },
 
   "cognitive_profile": {

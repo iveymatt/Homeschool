@@ -27,7 +27,7 @@
 **Who uses it:** Student at start of day, Parent for quick check
 
 **What it shows:**
-- Today's date and a personalized greeting ("Good morning, McKenna!")
+- Today's date and a personalized greeting ("Good morning, Makena!")
 - Today's schedule: 3–5 blocks listed with status chips (not started / in progress / done)
 - "Next Task" card — single prominent call to action
 - Reading focus of the day (one sentence)
