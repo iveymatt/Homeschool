@@ -2,13 +2,14 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+// Makena's own nav — Parent Summary is intentionally left off. That tab is
+// parent/administrator-facing only and lives in the desktop Sidebar instead.
 const NAV = [
   { href: "/",         label: "Home",    icon: "🏠" },
   { href: "/today",    label: "Today",   icon: "📋" },
   { href: "/reading",  label: "Reading", icon: "📖" },
   { href: "/math",     label: "Math",    icon: "➕" },
   { href: "/ef",       label: "Growth",  icon: "🌱" },
-  { href: "/parent",   label: "Parent",  icon: "👩" },
 ];
 
 export default function NavBar() {

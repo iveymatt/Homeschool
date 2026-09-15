@@ -17,6 +17,16 @@ export default function ParentPage() {
   const mathBlock = blocks.find((b) => b.subject === "math");
   const experientialBlock = blocks.find((b) => b.subject === "experiential");
 
+  const pct = Math.round((completed / total) * 100);
+  const completedTitles = blocks.filter((b) => b.status === "completed").map((b) => b.title);
+  const dailyHighlights = [
+    `${completed} of ${total} planned blocks completed (${pct}%).`,
+    `Reading focus: ${TODAY_PLAN.readingFocus}.`,
+    `Math focus: ${TODAY_PLAN.mathFocus}.`,
+    experientialBlock ? `Real-world learning: ${experientialBlock.title} — ${experientialBlock.realWorldContext ?? experientialBlock.goal}.` : null,
+    completedTitles.length > 0 ? `Completed blocks: ${completedTitles.join(", ")}.` : "No blocks completed yet today.",
+  ].filter(Boolean) as string[];
+
   return (
     <div className="pt-6 space-y-5">
       {/* Header */}
@@ -48,6 +58,34 @@ export default function ParentPage() {
               </span>
             </div>
           ))}
+        </div>
+      </div>
+
+      {/* Daily highlights + supports used */}
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+        <div className="bg-white border border-slate-100 rounded-2xl p-4 shadow-sm">
+          <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-1">Daily Highlights</p>
+          <p className="text-[11px] text-slate-400 mb-3">Auto-generated from today&apos;s live completion state</p>
+          <ul className="space-y-2">
+            {dailyHighlights.map((h, i) => (
+              <li key={i} className="flex items-start gap-2 text-sm text-slate-700">
+                <span className="flex-shrink-0 mt-0.5 text-sage-500">•</span>
+                {h}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="bg-white border border-slate-100 rounded-2xl p-4 shadow-sm">
+          <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-1">Supports Used</p>
+          <p className="text-[11px] text-slate-400 mb-3">Executive function + regulation supports</p>
+          <ul className="space-y-2">
+            {TODAY_PLAN.supportsUsedToday.map((s, i) => (
+              <li key={i} className="flex items-start gap-2 text-sm text-slate-700">
+                <span className="flex-shrink-0 mt-0.5 text-sage-500">•</span>
+                {s}
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
 
@@ -218,17 +256,32 @@ export default function ParentPage() {
         </ul>
       </div>
 
-      {/* Recent wins */}
-      <div className="bg-green-50 border border-green-200 rounded-2xl p-4">
-        <p className="text-xs font-semibold text-green-600 uppercase tracking-wide mb-2">Recent Wins</p>
-        <ul className="space-y-2">
-          {MAKENA.recentWins.map((win, i) => (
-            <li key={i} className="flex items-start gap-2 text-sm text-green-800">
-              <span className="flex-shrink-0 mt-0.5">✓</span>
-              {win}
-            </li>
-          ))}
-        </ul>
+      {/* What went well / needs refinement */}
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+        <div className="bg-green-50 border border-green-200 rounded-2xl p-4">
+          <p className="text-xs font-semibold text-green-600 uppercase tracking-wide mb-1">What Went Well</p>
+          <p className="text-[11px] text-green-600/70 mb-3">Confidence-building wins</p>
+          <ul className="space-y-2">
+            {MAKENA.recentWins.map((win, i) => (
+              <li key={i} className="flex items-start gap-2 text-sm text-green-800">
+                <span className="flex-shrink-0 mt-0.5">✓</span>
+                {win}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="bg-amber-50 border border-amber-200 rounded-2xl p-4">
+          <p className="text-xs font-semibold text-amber-600 uppercase tracking-wide mb-1">Needs Refinement</p>
+          <p className="text-[11px] text-amber-600/70 mb-3">Areas to work on together</p>
+          <ul className="space-y-2">
+            {MAKENA.currentStruggleFlags.map((flag, i) => (
+              <li key={i} className="flex items-start gap-2 text-sm text-amber-800">
+                <span className="flex-shrink-0 mt-0.5">△</span>
+                {flag}
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
 
       {/* Recommendation */}

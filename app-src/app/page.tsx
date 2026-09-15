@@ -170,9 +170,6 @@ export default function HomePage() {
             <span className="text-slate-500">Enrolled grade</span>
             <span className="font-medium text-slate-700">{MAKENA.enrolledGrade}</span>
           </div>
-          <Link href="/parent" className="block mt-2 text-center text-sm text-sage-600 font-medium py-2 bg-sage-50 rounded-xl">
-            View Full Parent Summary →
-          </Link>
         </div>
       </details>
     </div>

@@ -59,6 +59,8 @@ export interface DailyPlan {
   readingFocus: string;
   mathFocus: string;
   enrichmentTheme?: string;
+  // EF/regulation supports actually built into today's blocks — parent-facing only.
+  supportsUsedToday: string[];
   blocks: Block[];
 }
 
@@ -340,6 +342,14 @@ export const TODAY_PLAN: DailyPlan = {
   readingFocus: "Fluency — read 2 pages of Dog Man with expression",
   mathFocus: "Decimal operations — 3 problems with reference strip",
   enrichmentTheme: "Ranch & farrier work — hoof care log",
+  supportsUsedToday: [
+    "Visible step-by-step checklist — one step shown at a time",
+    "2-minute transition warning before each block change",
+    "Vocabulary anchor card kept on screen during reading",
+    "Reference strip visible throughout the math block",
+    "Movement break scheduled between reading and math",
+    "Gentle error framing — no red X, \"let's look at this together\"",
+  ],
   blocks: [
     {
       id: "block-startup",
