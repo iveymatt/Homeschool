@@ -72,9 +72,9 @@ export default function MathPage() {
 
       {/* EF before */}
       {current === 0 && !submitted && (
-        <div className="bg-teal-50 border border-teal-200 rounded-2xl px-4 py-3">
-          <p className="text-xs font-semibold text-teal-600 mb-1">Before you start</p>
-          <p className="text-sm text-teal-800">
+        <div className="bg-sage-50 border border-sage-200 rounded-2xl px-4 py-3">
+          <p className="text-xs font-semibold text-sage-600 mb-1">Before you start</p>
+          <p className="text-sm text-sage-800">
             Today: {PROBLEMS.length} problems. One at a time. Don&apos;t look ahead —
             the reference strip is right there if you need it.
           </p>

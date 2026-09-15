@@ -1,6 +1,6 @@
 // ─── Types ──────────────────────────────────────────────────────────────────
 
-export type SubjectType = "reading" | "math" | "enrichment" | "break" | "startup" | "wrap_up";
+export type SubjectType = "reading" | "math" | "enrichment" | "experiential" | "break" | "startup" | "wrap_up";
 export type StatusType = "not_started" | "in_progress" | "completed" | "skipped";
 export type TrendType = "improving" | "stable" | "declining";
 
@@ -14,6 +14,23 @@ export interface EFSupport {
   before?: string;
   during?: string;
   after?: string;
+}
+
+// Standards are for the parent/adult layer only — never surfaced in student-facing views.
+// See docs/standards-alignment.md: standards show the bridge from where McKenna is to
+// 8th grade expectations, they are never shown to McKenna as "you're behind."
+export interface StandardRef {
+  id: string;
+  description: string;
+  grade: string;
+  domain: string;
+}
+
+export interface StandardsAlignment {
+  primary: StandardRef;
+  secondary?: StandardRef;
+  gradeLevelContext: string;
+  parentNote: string;
 }
 
 export interface Block {
@@ -31,6 +48,9 @@ export interface Block {
   vocabularyAnchors?: { word: string; meaning: string }[];
   confidenceAfter?: number;
   lessonId?: string;
+  // What she actually did in real life that this block captures/maps to standards.
+  realWorldContext?: string;
+  standardsAlignment?: StandardsAlignment;
 }
 
 export interface DailyPlan {
@@ -68,6 +88,9 @@ export interface StudentProfile {
   nickname: string;
   age: number;
   enrolledGrade: string;
+  school: string;
+  // California school-based, not a homeschool enrollment — Freshman year at Casa Grande.
+  programNotes: string[];
   readingLevelEstimate: string;
   readingGradeGap: number;
   mathLevelEstimate: string;
@@ -93,12 +116,17 @@ export const MCKENNA: StudentProfile = {
   id: "mckenna-ray-001",
   name: "McKenna Ray",
   nickname: "McKenna",
-  age: 13,
-  enrolledGrade: "8th",
+  age: 14,
+  enrolledGrade: "9th (Freshman)",
+  school: "Casa Grande High School — Petaluma, CA",
+  programNotes: [
+    "School psychologist assessment scheduled to evaluate for an IEP and/or 504 plan.",
+    "Starting counseling and executive function coaching with EmpowerED — will refine specific class structure and independent-study details once that work begins.",
+  ],
   readingLevelEstimate: "6th grade",
-  readingGradeGap: 2,
+  readingGradeGap: 3,
   mathLevelEstimate: "5th–6th grade",
-  mathGradeGap: 2,
+  mathGradeGap: 3,
   readingLadderLevel: 4,
   mathLadderLevel: 6,
   confidenceReading: 2,
@@ -311,7 +339,7 @@ export const TODAY_PLAN: DailyPlan = {
   theme: "regular",
   readingFocus: "Fluency — read 2 pages of Dog Man with expression",
   mathFocus: "Decimal operations — 3 problems with reference strip",
-  enrichmentTheme: "Animal habitats — draw and label a wolf habitat",
+  enrichmentTheme: "Ranch & farrier work — hoof care log",
   blocks: [
     {
       id: "block-startup",
@@ -358,6 +386,22 @@ export const TODAY_PLAN: DailyPlan = {
         during: "Vocabulary words stay on screen. Take a breath between pages.",
         after: "You read both pages. That's the whole assignment. Tap Done.",
       },
+      standardsAlignment: {
+        primary: {
+          id: "RF.6.4b",
+          description: "Read grade-level prose and poetry orally with accuracy, appropriate rate, and expression",
+          grade: "6th",
+          domain: "Reading Foundational Skills",
+        },
+        secondary: {
+          id: "RL.7.4",
+          description: "Determine the meaning of words and phrases as they are used in text, including figurative language",
+          grade: "7th",
+          domain: "Reading: Literature",
+        },
+        gradeLevelContext: "This is a 6th grade foundational reading standard. McKenna is solidifying it now as the bridge toward high school reading expectations at Casa Grande.",
+        parentNote: "Today's reading lesson targets a California 6th grade fluency standard. Each session like this moves McKenna closer to grade-level reading.",
+      },
     },
     {
       id: "block-break-1",
@@ -398,21 +442,52 @@ export const TODAY_PLAN: DailyPlan = {
         during: "Reference strip stays visible. You're doing great.",
         after: "Math is done. That was real work. Take a breath.",
       },
+      standardsAlignment: {
+        primary: {
+          id: "6.NS.3",
+          description: "Fluently add, subtract, multiply, and divide multi-digit decimals",
+          grade: "6th",
+          domain: "The Number System",
+        },
+        gradeLevelContext: "This is a 6th grade California math standard. McKenna is working to master it as part of bridging toward high school math.",
+        parentNote: "Today's math lesson covers a California 6th grade decimals standard. Once this is solid, we'll move to 7th grade ratio and proportion concepts.",
+      },
     },
     {
       id: "block-enrichment",
       order: 5,
-      title: "Enrichment",
-      subject: "enrichment",
+      title: "Ranch & Farrier Work",
+      subject: "experiential",
       estimatedMinutes: 20,
-      goal: "Draw and label a wolf habitat",
-      instructions: "Draw a wolf habitat — forest, mountains, or tundra. Label at least 3 things. There is no wrong way.",
+      goal: "Log today's hoof care work with the farrier",
+      instructions: "After your farrier session, write down what you measured and did — hoof length, any trimming, and one thing you noticed about how the hoof is built.",
       steps: [
-        { id: 1, text: "Choose your habitat (forest / mountains / tundra)", completed: false },
-        { id: 2, text: "Draw the habitat", completed: false },
-        { id: 3, text: "Label at least 3 things in your drawing", completed: false },
+        { id: 1, text: "Write down the hoof measurements you took today", completed: false },
+        { id: 2, text: "Note anything the farrier explained about hoof structure", completed: false },
+        { id: 3, text: "Draw or describe one part of the hoof you learned about", completed: false },
       ],
       status: "not_started",
+      realWorldContext: "Measuring and recording hoof trims with the farrier at the ranch, and learning hoof anatomy.",
+      standardsAlignment: {
+        primary: {
+          id: "6.NS.3",
+          description: "Fluently add, subtract, multiply, and divide multi-digit decimals",
+          grade: "6th",
+          domain: "The Number System",
+        },
+        secondary: {
+          id: "NGSS MS-LS1-3",
+          description: "Use argument supported by evidence for how the body is a system of interacting subsystems composed of groups of cells",
+          grade: "6th–8th",
+          domain: "Life Science — Structure & Function",
+        },
+        gradeLevelContext: "Real ranch work: measuring hoof trims in decimal inches practices the same 6th grade decimals skill as her math block, and the hoof-anatomy discussion applies middle school life science structure-and-function concepts hands-on.",
+        parentNote: "McKenna's farrier work today wasn't just a hobby — the measuring practiced her math standard (6.NS.3, decimals) and the anatomy discussion touched middle school life science (structure & function). Real-world experience, real academic credit.",
+      },
+      efSupport: {
+        before: "You just got done at the ranch — nice work. Let's capture what you did while it's fresh.",
+        after: "That's real science and math work. Tap Done.",
+      },
     },
     {
       id: "block-wrapup",
@@ -437,6 +512,7 @@ export const SUBJECT_COLORS: Record<SubjectType, string> = {
   reading: "bg-sky-50 border-sky-200 text-sky-700",
   math: "bg-violet-50 border-violet-200 text-violet-700",
   enrichment: "bg-amber-50 border-amber-200 text-amber-700",
+  experiential: "bg-orange-50 border-orange-200 text-orange-700",
   break: "bg-green-50 border-green-200 text-green-700",
   startup: "bg-slate-50 border-slate-200 text-slate-600",
   wrap_up: "bg-rose-50 border-rose-200 text-rose-700",
@@ -446,6 +522,7 @@ export const SUBJECT_ICONS: Record<SubjectType, string> = {
   reading: "📖",
   math: "➕",
   enrichment: "🎨",
+  experiential: "🐴",
   break: "🌿",
   startup: "☀️",
   wrap_up: "✅",
@@ -478,3 +555,147 @@ export const SCORE_COLORS: Record<number, string> = {
   3: "bg-green-100 text-green-800",
   4: "bg-emerald-100 text-emerald-800",
 };
+
+// ─── Real-World Learning Library ────────────────────────────────────────────
+// Real activities from McKenna's life, mapped to California standards for
+// parent/team reporting. Not all of these are in today's plan — they're
+// available to pull into any day's Experiential block. Standards are shown
+// to the parent/team layer only, never to McKenna as "you're behind."
+
+export const EXPERIENTIAL_LIBRARY: Block[] = [
+  {
+    id: "exp-farrier",
+    order: 0,
+    title: "Ranch & Farrier Work",
+    subject: "experiential",
+    estimatedMinutes: 20,
+    goal: "Log today's hoof care work with the farrier",
+    instructions: "Record hoof measurements and trims, and one thing learned about hoof structure.",
+    steps: [
+      { id: 1, text: "Write down the hoof measurements you took today", completed: false },
+      { id: 2, text: "Note anything the farrier explained about hoof structure", completed: false },
+      { id: 3, text: "Draw or describe one part of the hoof you learned about", completed: false },
+    ],
+    status: "not_started",
+    realWorldContext: "Measuring and recording hoof trims with the farrier at the ranch, and learning hoof anatomy.",
+    standardsAlignment: {
+      primary: {
+        id: "6.NS.3",
+        description: "Fluently add, subtract, multiply, and divide multi-digit decimals",
+        grade: "6th",
+        domain: "The Number System",
+      },
+      secondary: {
+        id: "NGSS MS-LS1-3",
+        description: "Use argument supported by evidence for how the body is a system of interacting subsystems composed of groups of cells",
+        grade: "6th–8th",
+        domain: "Life Science — Structure & Function",
+      },
+      gradeLevelContext: "Measuring hoof trims in decimal inches practices the same 6th grade decimals skill as her math block; the anatomy discussion applies middle school life science structure-and-function concepts hands-on.",
+      parentNote: "McKenna's farrier work isn't just a hobby — the measuring practices her math standard (6.NS.3, decimals) and the anatomy discussion touches middle school life science (structure & function).",
+    },
+  },
+  {
+    id: "exp-equine-anatomy",
+    order: 0,
+    title: "Equine Leg Anatomy Study",
+    subject: "experiential",
+    estimatedMinutes: 30,
+    goal: "Record observations from the leg dissection at the Junior College",
+    instructions: "Follow the dissection steps with the instructor. Write down each structure found and what it does.",
+    steps: [
+      { id: 1, text: "List the structures identified during dissection, in order", completed: false },
+      { id: 2, text: "Write one sentence about what each structure does", completed: false },
+      { id: 3, text: "Note one connection to hoof or leg health", completed: false },
+    ],
+    status: "not_started",
+    realWorldContext: "Equine leg dissection at the Junior College, studying anatomy structure and function.",
+    standardsAlignment: {
+      primary: {
+        id: "NGSS MS-LS1-3",
+        description: "Use argument supported by evidence for how the body is a system of interacting subsystems composed of groups of cells",
+        grade: "6th–8th",
+        domain: "Life Science — Structure & Function",
+      },
+      secondary: {
+        id: "RST.6-8.3",
+        description: "Follow precisely a multistep procedure when carrying out experiments, taking measurements, or performing technical tasks",
+        grade: "6th–8th",
+        domain: "Science & Technical Literacy",
+      },
+      gradeLevelContext: "A hands-on college-level dissection lab applies middle school life science structure-and-function standards directly, and following the dissection procedure builds the technical-literacy skill of following a multistep process.",
+      parentNote: "This wasn't a worksheet — McKenna worked through an actual college-level dissection lab. That's authentic application of standards most students only see in a textbook.",
+    },
+    efSupport: {
+      before: "This is hands-on and might be intense — that's okay. Go at your own pace.",
+      after: "You worked through a real anatomy lab. That's advanced work.",
+    },
+  },
+  {
+    id: "exp-gymnastics",
+    order: 0,
+    title: "Gymnastics Coaching Reflection",
+    subject: "experiential",
+    estimatedMinutes: 15,
+    goal: "Reflect on coaching younger gymnasts today",
+    instructions: "Think about the instructions given to the younger gymnasts today. Write down one thing explained clearly and one thing to explain differently next time.",
+    steps: [
+      { id: 1, text: "Write one instruction you gave today", completed: false },
+      { id: 2, text: "Describe how the gymnast responded", completed: false },
+      { id: 3, text: "Note one thing you'd say differently next time", completed: false },
+    ],
+    status: "not_started",
+    realWorldContext: "Assistant coaching younger gymnasts at the gym — giving instructions and feedback.",
+    standardsAlignment: {
+      primary: {
+        id: "SL.9-10.1",
+        description: "Initiate and participate effectively in a range of collaborative discussions, expressing ideas clearly and persuasively",
+        grade: "9th–10th",
+        domain: "Speaking & Listening",
+      },
+      secondary: {
+        id: "SL.6.4",
+        description: "Present claims and findings, sequencing ideas logically",
+        grade: "6th",
+        domain: "Speaking & Listening",
+      },
+      gradeLevelContext: "Giving clear, sequenced verbal instructions to younger athletes is grade-level speaking-and-listening work — a standard where McKenna's real-world coaching experience meets or exceeds her enrolled grade band, not behind it.",
+      parentNote: "McKenna's coaching today is genuine high school-level speaking-and-listening practice — explaining steps clearly to someone else is a more demanding skill than just following instructions herself.",
+    },
+    efSupport: {
+      after: "Teaching someone else means you really know it. Nice work today.",
+    },
+  },
+  {
+    id: "exp-babysitting",
+    order: 0,
+    title: "Babysitting Log",
+    subject: "experiential",
+    estimatedMinutes: 15,
+    goal: "Log today's babysitting job",
+    instructions: "Record start and end time, what was done, and any math involved (snacks, schedules, pay).",
+    steps: [
+      { id: 1, text: "Write start and end time and total hours", completed: false },
+      { id: 2, text: "Note any measuring, counting, or money math you did", completed: false },
+      { id: 3, text: "Write one thing that went well", completed: false },
+    ],
+    status: "not_started",
+    realWorldContext: "Babysitting — managing time, snacks/measurements, and responsibility for another child.",
+    standardsAlignment: {
+      primary: {
+        id: "6.RP.3",
+        description: "Use ratio and rate reasoning to solve real-world and mathematical problems",
+        grade: "6th",
+        domain: "Ratios & Proportional Relationships",
+      },
+      secondary: {
+        id: "W.9-10.4",
+        description: "Produce clear and coherent writing in which the development, organization, and style are appropriate to task, purpose, and audience",
+        grade: "9th–10th",
+        domain: "Writing",
+      },
+      gradeLevelContext: "Tracking hours, pay, and quantities while babysitting practices the same rate-and-ratio reasoning as her math bridge work, and writing up the log practices clear, organized writing at grade level.",
+      parentNote: "Babysitting is real responsibility and real math — hourly pay, timing, and measuring are practical applications of the ratio skills McKenna is building toward in her math block.",
+    },
+  },
+];

@@ -1,16 +1,26 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { TODAY_PLAN, SUBJECT_ICONS, SUBJECT_COLORS, type Block } from "@/lib/data";
+import { useLocalStorage } from "@/lib/useLocalStorage";
 
 export default function TodayPage() {
-  const [blocks, setBlocks] = useState<Block[]>(TODAY_PLAN.blocks);
-  const [activeId, setActiveId] = useState<string | null>(
-    TODAY_PLAN.blocks.find((b) => b.status !== "completed")?.id ?? null
+  const [blocks, setBlocks, blocksLoaded] = useLocalStorage<Block[]>(
+    `mckenna-today-blocks-${TODAY_PLAN.date}`,
+    TODAY_PLAN.blocks
   );
+  const [activeId, setActiveId] = useState<string | null>(null);
   const [showVocab, setShowVocab] = useState(false);
   const [showEF, setShowEF] = useState(false);
   const [confidenceMap, setConfidenceMap] = useState<Record<string, number>>({});
   const [celebrateId, setCelebrateId] = useState<string | null>(null);
+
+  // Once today's saved progress has loaded, open the first block that isn't done yet.
+  useEffect(() => {
+    if (blocksLoaded) {
+      setActiveId((prev) => prev ?? blocks.find((b) => b.status !== "completed")?.id ?? null);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [blocksLoaded]);
 
   const completed = blocks.filter((b) => b.status === "completed").length;
   const total = blocks.length;
@@ -46,7 +56,8 @@ export default function TodayPage() {
     <div className="pt-6 space-y-4">
       {/* Header */}
       <div>
-        <h1 className="text-2xl font-semibold text-slate-800">Today's Plan</h1>
+        <p className="eyebrow">Daily Schedule</p>
+        <h1 className="text-2xl font-semibold text-slate-800 mt-1">Today's Plan</h1>
         <p className="text-sm text-slate-500 mt-0.5">{TODAY_PLAN.date}</p>
       </div>
 
@@ -57,16 +68,16 @@ export default function TodayPage() {
           <span>{pct}%</span>
         </div>
         <div className="h-2.5 bg-slate-100 rounded-full overflow-hidden">
-          <div className="h-full bg-teal-500 rounded-full transition-all duration-700" style={{ width: `${pct}%` }} />
+          <div className="h-full bg-sage-500 rounded-full transition-all duration-700" style={{ width: `${pct}%` }} />
         </div>
       </div>
 
       {/* All done state */}
       {pct === 100 && (
-        <div className="bg-teal-50 border border-teal-200 rounded-2xl p-5 text-center">
+        <div className="bg-sage-50 border border-sage-200 rounded-2xl p-5 text-center">
           <p className="text-3xl mb-2">🎉</p>
-          <p className="text-lg font-semibold text-teal-800">You finished today's plan!</p>
-          <p className="text-sm text-teal-600 mt-1">Great work, McKenna. You did it.</p>
+          <p className="text-lg font-semibold text-sage-800">You finished today's plan!</p>
+          <p className="text-sm text-sage-600 mt-1">Great work, McKenna. You did it.</p>
         </div>
       )}
 
@@ -102,10 +113,10 @@ export default function TodayPage() {
 
             {/* Celebration */}
             {isCelebrating && (
-              <div className="bg-teal-50 border-t border-teal-100 px-4 py-4 text-center">
+              <div className="bg-sage-50 border-t border-sage-100 px-4 py-4 text-center">
                 <p className="text-2xl mb-1">🎉</p>
-                <p className="font-semibold text-teal-800">{block.title} is done!</p>
-                <p className="text-sm text-teal-600">Great work. Moving to the next block.</p>
+                <p className="font-semibold text-sage-800">{block.title} is done!</p>
+                <p className="text-sm text-sage-600">Great work. Moving to the next block.</p>
               </div>
             )}
 
@@ -115,9 +126,9 @@ export default function TodayPage() {
 
                 {/* EF before prompt */}
                 {block.efSupport?.before && (
-                  <div className="bg-teal-50 border border-teal-100 rounded-xl px-3 py-2">
-                    <p className="text-xs font-semibold text-teal-600 mb-0.5">Before you start</p>
-                    <p className="text-sm text-teal-800">{block.efSupport.before}</p>
+                  <div className="bg-sage-50 border border-sage-100 rounded-xl px-3 py-2">
+                    <p className="text-xs font-semibold text-sage-600 mb-0.5">Before you start</p>
+                    <p className="text-sm text-sage-800">{block.efSupport.before}</p>
                   </div>
                 )}
 
@@ -205,7 +216,7 @@ export default function TodayPage() {
                   disabled={!allStepsDone}
                   className={`w-full py-3 rounded-xl font-semibold text-sm transition-all
                     ${allStepsDone
-                      ? "bg-teal-600 text-white hover:bg-teal-700 shadow-sm"
+                      ? "bg-sage-600 text-white hover:bg-sage-700 shadow-sm"
                       : "bg-slate-100 text-slate-400 cursor-not-allowed"}`}
                 >
                   {allStepsDone ? `✓ Mark ${block.title} Done` : `Complete all steps to continue`}

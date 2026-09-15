@@ -1,20 +1,28 @@
 "use client";
-import { MCKENNA, TODAY_PLAN, TREND_ICONS, TREND_COLORS } from "@/lib/data";
+import { MCKENNA, TODAY_PLAN, EXPERIENTIAL_LIBRARY, TREND_ICONS, TREND_COLORS, type Block } from "@/lib/data";
+import { useLocalStorage } from "@/lib/useLocalStorage";
 
 export default function ParentPage() {
   const today = new Date().toLocaleDateString("en-US", {
     weekday: "long", month: "long", day: "numeric",
   });
 
-  const completed = TODAY_PLAN.blocks.filter((b) => b.status === "completed").length;
-  const total = TODAY_PLAN.blocks.length;
+  // Same storage key as the Today page, so this reflects what McKenna actually completed.
+  const [blocks] = useLocalStorage<Block[]>(`mckenna-today-blocks-${TODAY_PLAN.date}`, TODAY_PLAN.blocks);
+
+  const completed = blocks.filter((b) => b.status === "completed").length;
+  const total = blocks.length;
+
+  const readingBlock = blocks.find((b) => b.subject === "reading");
+  const mathBlock = blocks.find((b) => b.subject === "math");
+  const experientialBlock = blocks.find((b) => b.subject === "experiential");
 
   return (
     <div className="pt-6 space-y-5">
       {/* Header */}
       <div>
-        <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide">Parent Summary</p>
-        <h1 className="text-2xl font-semibold text-slate-800 mt-0.5">McKenna Ray</h1>
+        <p className="eyebrow">Parent Summary</p>
+        <h1 className="text-2xl font-semibold text-slate-800 mt-1">{MCKENNA.name}</h1>
         <p className="text-sm text-slate-500">{today}</p>
       </div>
 
@@ -27,12 +35,12 @@ export default function ParentPage() {
         </div>
         <div className="h-2.5 bg-slate-100 rounded-full overflow-hidden">
           <div
-            className="h-full bg-teal-500 rounded-full transition-all"
+            className="h-full bg-sage-500 rounded-full transition-all"
             style={{ width: `${Math.round((completed / total) * 100)}%` }}
           />
         </div>
         <div className="mt-3 space-y-1">
-          {TODAY_PLAN.blocks.map((b) => (
+          {blocks.map((b) => (
             <div key={b.id} className="flex items-center gap-2 text-sm">
               <span>{b.status === "completed" ? "✅" : "⬜"}</span>
               <span className={b.status === "completed" ? "text-slate-500 line-through" : "text-slate-700"}>
@@ -64,7 +72,7 @@ export default function ParentPage() {
           </div>
           <div className="flex-1 bg-white rounded-xl px-3 py-2 border border-sky-100">
             <p className="text-[10px] text-sky-500 font-medium uppercase">CA Standard</p>
-            <p className="text-sm font-semibold text-sky-800">RF.6.4b</p>
+            <p className="text-sm font-semibold text-sky-800">{readingBlock?.standardsAlignment?.primary.id ?? "—"}</p>
           </div>
         </div>
       </div>
@@ -90,10 +98,66 @@ export default function ParentPage() {
           </div>
           <div className="flex-1 bg-white rounded-xl px-3 py-2 border border-violet-100">
             <p className="text-[10px] text-violet-500 font-medium uppercase">CA Standard</p>
-            <p className="text-sm font-semibold text-violet-800">6.NS.3</p>
+            <p className="text-sm font-semibold text-violet-800">{mathBlock?.standardsAlignment?.primary.id ?? "—"}</p>
           </div>
         </div>
       </div>
+
+      {/* Real-world learning summary */}
+      {experientialBlock?.standardsAlignment && (
+        <div className="bg-orange-50 border border-orange-200 rounded-2xl p-4">
+          <p className="text-xs font-semibold text-orange-500 uppercase tracking-wide mb-1">🐴 Real-World Learning</p>
+          <p className="text-sm font-medium text-orange-800 mb-2">{experientialBlock.title}</p>
+          {experientialBlock.realWorldContext && (
+            <p className="text-xs text-orange-700 italic mb-2">{experientialBlock.realWorldContext}</p>
+          )}
+          <p className="text-sm text-orange-900 leading-relaxed">
+            {experientialBlock.standardsAlignment.parentNote}
+          </p>
+          <div className="mt-3 flex flex-wrap gap-2">
+            <span className="bg-white text-orange-700 text-xs font-semibold px-3 py-1.5 rounded-full border border-orange-200">
+              {experientialBlock.standardsAlignment.primary.id} · {experientialBlock.standardsAlignment.primary.domain}
+            </span>
+            {experientialBlock.standardsAlignment.secondary && (
+              <span className="bg-white text-orange-700 text-xs font-semibold px-3 py-1.5 rounded-full border border-orange-200">
+                {experientialBlock.standardsAlignment.secondary.id} · {experientialBlock.standardsAlignment.secondary.domain}
+              </span>
+            )}
+          </div>
+        </div>
+      )}
+
+      {/* Real-world learning library */}
+      <details className="bg-white rounded-2xl border border-slate-100 shadow-sm">
+        <summary className="px-4 py-3 text-sm font-medium text-slate-600 cursor-pointer select-none">
+          🐴 Real-World Learning Library
+        </summary>
+        <div className="px-4 pb-4 pt-1 space-y-3 border-t border-slate-50">
+          <p className="text-xs text-slate-400">
+            Real activities from McKenna's life, mapped to standards — available to pull into any day's plan.
+          </p>
+          {EXPERIENTIAL_LIBRARY.map((activity) => (
+            <div key={activity.id} className="bg-slate-50 border border-slate-100 rounded-xl p-3">
+              <p className="text-sm font-semibold text-slate-700">{activity.title}</p>
+              {activity.realWorldContext && (
+                <p className="text-xs text-slate-500 mt-0.5">{activity.realWorldContext}</p>
+              )}
+              {activity.standardsAlignment && (
+                <div className="mt-2 flex flex-wrap gap-1.5">
+                  <span className="bg-white text-slate-600 text-[10px] font-semibold px-2 py-1 rounded-full border border-slate-200">
+                    {activity.standardsAlignment.primary.id}
+                  </span>
+                  {activity.standardsAlignment.secondary && (
+                    <span className="bg-white text-slate-600 text-[10px] font-semibold px-2 py-1 rounded-full border border-slate-200">
+                      {activity.standardsAlignment.secondary.id}
+                    </span>
+                  )}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </details>
 
       {/* EF highlights */}
       <div className="bg-white border border-slate-100 rounded-2xl p-4 shadow-sm">
@@ -117,14 +181,14 @@ export default function ParentPage() {
       <div className="bg-slate-800 text-white rounded-2xl p-4">
         <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-2">CA Standards Context</p>
         <p className="text-sm text-slate-200 leading-relaxed">
-          McKenna is enrolled in 8th grade and working at approximately 6th grade level in reading
-          and math — a 2-year gap. This homeschool plan is closing that gap using California Common
-          Core State Standards as the target. Every lesson maps to a specific standard and moves her
-          forward along a documented skill ladder. This is real, standards-based curriculum.
+          McKenna is a freshman at {MCKENNA.school}, working at approximately 6th grade level in
+          reading and math — about a 3-year gap. This plan bridges that gap using California
+          Common Core State Standards as the target. Every lesson maps to a specific standard and
+          moves her forward along a documented skill ladder. This is real, standards-based work.
         </p>
         <div className="mt-3 grid grid-cols-2 gap-2">
           {[
-            { label: "Enrolled Grade", value: "8th" },
+            { label: "Enrolled Grade", value: MCKENNA.enrolledGrade },
             { label: "Reading Level", value: MCKENNA.readingLevelEstimate },
             { label: "Math Level", value: MCKENNA.mathLevelEstimate },
             { label: "Standards Ref", value: "CA CCSS" },
@@ -135,6 +199,23 @@ export default function ParentPage() {
             </div>
           ))}
         </div>
+      </div>
+
+      {/* School & support team status */}
+      <div className="bg-white border border-slate-100 rounded-2xl p-4 shadow-sm">
+        <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-3">School & Support Team</p>
+        <div className="flex items-center justify-between text-sm mb-2">
+          <span className="text-slate-500">School</span>
+          <span className="font-medium text-slate-700">{MCKENNA.school}</span>
+        </div>
+        <ul className="space-y-2 mt-2">
+          {MCKENNA.programNotes.map((note, i) => (
+            <li key={i} className="flex items-start gap-2 text-sm text-slate-600">
+              <span className="flex-shrink-0 mt-0.5 text-sage-500">○</span>
+              {note}
+            </li>
+          ))}
+        </ul>
       </div>
 
       {/* Recent wins */}
@@ -166,7 +247,7 @@ export default function ParentPage() {
         <ul className="space-y-2">
           {MCKENNA.goals30Day.map((goal, i) => (
             <li key={i} className="flex items-start gap-2 text-sm text-slate-700">
-              <span className="flex-shrink-0 mt-0.5 text-teal-500">○</span>
+              <span className="flex-shrink-0 mt-0.5 text-sage-500">○</span>
               {goal}
             </li>
           ))}

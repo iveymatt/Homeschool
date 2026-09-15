@@ -65,14 +65,15 @@ export default function ProgressPage() {
     <div className="pt-6 space-y-6">
       {/* Header */}
       <div>
-        <h1 className="text-2xl font-semibold text-slate-800">Progress</h1>
+        <p className="eyebrow">Growth Over Time</p>
+        <h1 className="text-2xl font-semibold text-slate-800 mt-1">Progress</h1>
         <p className="text-sm text-slate-500 mt-0.5">McKenna&apos;s skill ladder — updated each session</p>
       </div>
 
       {/* Streak + overview */}
       <div className="grid grid-cols-3 gap-3">
         <div className="bg-white border border-slate-100 rounded-2xl p-3 text-center shadow-sm">
-          <p className="text-2xl font-bold text-teal-600">5</p>
+          <p className="text-2xl font-bold text-sage-600">5</p>
           <p className="text-xs text-slate-500 mt-0.5">Day streak</p>
         </div>
         <div className="bg-sky-50 border border-sky-200 rounded-2xl p-3 text-center">
